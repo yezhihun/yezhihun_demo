@@ -3,6 +3,9 @@ package com.yg.omp.webservice.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,11 +13,18 @@ import com.yg.omp.entity.MonthlyRepayment;
 import com.yg.omp.service.MonthlyRepaymentService;
 import com.yg.omp.webservice.ForOmWebService;
 
+@Path("/forOmWebService")
 @Service("forOmWebService")
 public class ForOmWebServiceImpl implements ForOmWebService{
 
 	@Autowired
 	private MonthlyRepaymentService monthlyRepaymentService;
+	
+	@GET
+	@Path("/sayHello")
+	public String sayHello(){
+		return "hello";
+	}
 	
 	@Override
 	public String syncRepaymentData(String xmlData) {

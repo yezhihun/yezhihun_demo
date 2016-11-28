@@ -9,6 +9,5 @@
 	<import resource="classpath:/spring/spring-base.xml"/>
 	<import resource="classpath:/spring/rabbitmq.xml" />
 	<import resource="classpath:/spring/quratz.xml" />
-	<import resource="classpath:/spring/shiro.xml" />
 	<!-- <import resource="classpath:/spring/spring-config-cxf.xml" /> -->
 </beans>
