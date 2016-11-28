@@ -1,0 +1,7 @@
+<root>
+  <facet id="jpt.jaxb">
+    <node name="classgen">
+      <attribute name="package" value="com.yg.omp.mq.model"/>
+    </node>
+  </facet>
+</root>
