@@ -4,10 +4,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.Trigger;
 import org.quartz.Trigger.CompletedExecutionInstruction;
 import org.quartz.TriggerListener;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import com.yg.omp.service.QrtzTriggerService;
 
 /**
  * 
@@ -26,8 +23,8 @@ import com.yg.omp.service.QrtzTriggerService;
  */
 @Component
 public class TriggerListenerForBackup implements TriggerListener{
-    @Autowired
-    private QrtzTriggerService qrtzTriggerService;
+//    @Autowired
+//    private QrtzTriggerService qrtzTriggerService;
 
 	@Override
 	public String getName() {
@@ -41,7 +38,7 @@ public class TriggerListenerForBackup implements TriggerListener{
 	public void triggerFired(Trigger trigger, JobExecutionContext context) {
 		System.out.println("triggerFired");
 		try{
-			qrtzTriggerService.createBackupJob(trigger.getJobKey().getName());
+//			qrtzTriggerService.createBackupJob(trigger.getJobKey().getName());
 		}catch(Exception e){
 			e.printStackTrace();
 		}

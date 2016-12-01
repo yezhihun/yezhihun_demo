@@ -1,31 +1,27 @@
 package com.yg.omp.service.impl;
 
-import com.yg.omp.base.PageModel;
-import com.yg.omp.dao.MonthlyRepaymentDao;
-import com.yg.omp.entity.DeductWater;
-import com.yg.omp.entity.MonthlyRepayment;
-import com.yg.omp.entity.MonthlyRepaymentResponse;
-import com.yg.omp.mapper.MonthlyRepaymentMapper;
-import com.yg.omp.mq.MessageSender;
-import com.yg.omp.mq.model.PaymentTransferInfoResponse;
-import com.yg.omp.service.DeductWaterService;
-import com.yg.omp.service.MonthlyRepaymentService;
-import com.yg.omp.utils.DateUtil;
-import com.yg.omp.utils.enums.Constant;
-import com.yg.omp.utils.enums.DeductStatus;
-import com.yg.omp.utils.enums.PlantformType;
-import com.yg.omp.webservice.CallOmWebService;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.PostConstruct;
-
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.yg.omp.base.PageModel;
+import com.yg.omp.dao.MonthlyRepaymentDao;
+import com.yg.omp.entity.MonthlyRepayment;
+import com.yg.omp.mapper.MonthlyRepaymentMapper;
+import com.yg.omp.mq.MessageSender;
+import com.yg.omp.mq.model.PaymentTransferInfoResponse;
+import com.yg.omp.service.MonthlyRepaymentService;
+import com.yg.omp.utils.DateUtil;
+import com.yg.omp.utils.enums.DeductStatus;
+import com.yg.omp.utils.enums.PlantformType;
+import com.yg.omp.webservice.CallOmWebService;
 
 @Service
 public class MonthlyRepaymentServiceImpl extends AbstractBaseServiceImpl<MonthlyRepayment> implements MonthlyRepaymentService {
@@ -39,8 +35,6 @@ public class MonthlyRepaymentServiceImpl extends AbstractBaseServiceImpl<Monthly
 	@Autowired
 	private CallOmWebService callOmWebService;
 	
-	@Autowired
-	private DeductWaterService deductWaterService;
 	
 	@Autowired
 	private MonthlyRepaymentMapper monthlyRepaymentMapper;
@@ -78,41 +72,41 @@ public class MonthlyRepaymentServiceImpl extends AbstractBaseServiceImpl<Monthly
 	@Override
 	public void doCallBackForRepayment(List<PaymentTransferInfoResponse> list) {
 		//  更新状态被推送至运营平台
-		List<MonthlyRepaymentResponse> listRepayment = new ArrayList<>();
-		
-		for(PaymentTransferInfoResponse response : list){
-			//  根据ID查询数据
-//			MonthlyRepayment repayment = monthlyRepaymentDao.findByCorrelationId(response.getCorrelationId());
-			MonthlyRepayment repayment = monthlyRepaymentDao.findByGlobalId(response.getGlobalId());
-			if(repayment == null){
-				continue;
-			}
-			synchronized (messageCount) {
-				messageCount ++;
-				System.out.println("get message count is "+messageCount);
-				log.info("get message count is "+messageCount);
-			}
-
-			//判断之前代扣状态
-			if(repayment!=null && Constant.GLOBAL_ID.equals(repayment.getApplicationId()) && repayment.getDeductStatus().equals(DeductStatus.CLZ.getVal())){
-				repayment.setDeductStatus(response.getPaymentStatus()==1?DeductStatus.CLCG.getVal():DeductStatus.CLSB.getVal());
-				// 代扣时间 待定
-				repayment.setDeductTime(new Date());
-//				repayment.setTransType(response.getPaymentType());
-				// 修改渠道
-				repayment.setPayChannel(response.getPayChannel());
-				//流水号
-				repayment.setRequestId(response.getRequestId());
-				monthlyRepaymentDao.updateStatus(repayment);
-				// 插入response 数据库
-				DeductWater water = new DeductWater(response);
-				deductWaterService.insert(water);
-				listRepayment.add(new MonthlyRepaymentResponse(repayment));
-			}
-		}
-		if(listRepayment.size()>0){
-			callOmWebService.endMonthlyRepayment(listRepayment);
-		}
+//		List<MonthlyRepaymentResponse> listRepayment = new ArrayList<>();
+//		
+//		for(PaymentTransferInfoResponse response : list){
+//			//  根据ID查询数据
+////			MonthlyRepayment repayment = monthlyRepaymentDao.findByCorrelationId(response.getCorrelationId());
+//			MonthlyRepayment repayment = monthlyRepaymentDao.findByGlobalId(response.getGlobalId());
+//			if(repayment == null){
+//				continue;
+//			}
+//			synchronized (messageCount) {
+//				messageCount ++;
+//				System.out.println("get message count is "+messageCount);
+//				log.info("get message count is "+messageCount);
+//			}
+//
+//			//判断之前代扣状态
+//			if(repayment!=null && Constant.GLOBAL_ID.equals(repayment.getApplicationId()) && repayment.getDeductStatus().equals(DeductStatus.CLZ.getVal())){
+//				repayment.setDeductStatus(response.getPaymentStatus()==1?DeductStatus.CLCG.getVal():DeductStatus.CLSB.getVal());
+//				// 代扣时间 待定
+//				repayment.setDeductTime(new Date());
+////				repayment.setTransType(response.getPaymentType());
+//				// 修改渠道
+//				repayment.setPayChannel(response.getPayChannel());
+//				//流水号
+//				repayment.setRequestId(response.getRequestId());
+//				monthlyRepaymentDao.updateStatus(repayment);
+//				// 插入response 数据库
+//				DeductWater water = new DeductWater(response);
+//				deductWaterService.insert(water);
+//				listRepayment.add(new MonthlyRepaymentResponse(repayment));
+//			}
+//		}
+//		if(listRepayment.size()>0){
+//			callOmWebService.endMonthlyRepayment(listRepayment);
+//		}
 	}
 	
 	@Override

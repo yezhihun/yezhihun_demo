@@ -1,8 +1,5 @@
 package com.yg.omp.webservice;
 
-import java.util.List;
-
-import com.yg.omp.entity.MonthlyRepaymentResponse;
 
 public interface CallOmWebService {
 
@@ -22,7 +19,7 @@ public interface CallOmWebService {
 	* @return String
 	* @throws
 	 */
-	public void endMonthlyRepayment(List<MonthlyRepaymentResponse> list);
+//	public void endMonthlyRepayment(List<MonthlyRepaymentResponse> list);
 	
 	/**
 	 * 

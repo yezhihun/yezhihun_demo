@@ -1,10 +1,14 @@
 package com.yg.omp.webservice.impl;
 
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
 import com.yg.omp.entity.MonthlyRepayment;
-import com.yg.omp.entity.MonthlyRepaymentResponse;
-import com.yg.omp.entity.OmLog;
 import com.yg.omp.service.MonthlyRepaymentService;
-import com.yg.omp.service.OmLogService;
 import com.yg.omp.service.impl.MonthlyRepaymentServiceImpl;
 import com.yg.omp.utils.DateUtil;
 import com.yg.omp.utils.HttpUtil;
@@ -13,13 +17,6 @@ import com.yg.omp.utils.UUIDUtil;
 import com.yg.omp.utils.enums.Constant;
 import com.yg.omp.utils.enums.DeductStatus;
 import com.yg.omp.webservice.CallOmWebService;
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-
-import java.util.Date;
-import java.util.List;
 
 @Service
 public class CallOmWebServiceImpl implements CallOmWebService{
@@ -29,9 +26,6 @@ public class CallOmWebServiceImpl implements CallOmWebService{
 	
 	@Autowired
 	private MonthlyRepaymentService monthlyRepaymentService;
-	
-	@Autowired
-	private OmLogService omLogService;
 	
 	@Value("${om.allData.url}")
 	private String omAllDataUrl;
@@ -63,7 +57,6 @@ public class CallOmWebServiceImpl implements CallOmWebService{
 			e.printStackTrace();
 		}
 		
-		OmLog omLog = new OmLog();
 		boolean flag = true;
 		try{
 			List<MonthlyRepayment> list = convertData(xmlData);
@@ -89,10 +82,10 @@ public class CallOmWebServiceImpl implements CallOmWebService{
 			e.printStackTrace();
 			flag = false;
 		}finally{
-			omLog.setData(xmlData);
-			omLog.setInterfaceDesc("同步还款数据接口");
-			omLog.setOperTime(new Date());
-			omLog.setOperStatus(flag?1:0);
+//			omLog.setData(xmlData);
+//			omLog.setInterfaceDesc("同步还款数据接口");
+//			omLog.setOperTime(new Date());
+//			omLog.setOperStatus(flag?1:0);
 			
 //			omLogService.insert(omLog);
 		}
@@ -110,27 +103,26 @@ public class CallOmWebServiceImpl implements CallOmWebService{
 		return list;
 	}
 
-	@Override
-	public void endMonthlyRepayment(List<MonthlyRepaymentResponse> list) {
-		/**
-		 *  1,同步月还结果
-		 */
-		String xmlStr = JaxbUtil.convertToXml(list, "ArrayOfPushData", MonthlyRepaymentResponse.class);
-		
-		String listRes = "";
-		for(int i=0; i<list.size(); i++){
-			listRes = listRes + list.get(i).getReId() + ",";
-		}
-		log.info("list of reId--------------------"+listRes);
-		try{
-			String result = HttpUtil.sendPost(omPushData, xmlStr);
-			log.info("sentPost result is "+result);
-		}catch(Exception e){
-			e.printStackTrace();
-			log.error(e);
-		}
-		
-	}
+//	public void endMonthlyRepayment(List<MonthlyRepaymentResponse> list) {
+//		/**
+//		 *  1,同步月还结果
+//		 */
+//		String xmlStr = JaxbUtil.convertToXml(list, "ArrayOfPushData", MonthlyRepaymentResponse.class);
+//		
+//		String listRes = "";
+//		for(int i=0; i<list.size(); i++){
+//			listRes = listRes + list.get(i).getReId() + ",";
+//		}
+//		log.info("list of reId--------------------"+listRes);
+//		try{
+//			String result = HttpUtil.sendPost(omPushData, xmlStr);
+//			log.info("sentPost result is "+result);
+//		}catch(Exception e){
+//			e.printStackTrace();
+//			log.error(e);
+//		}
+//		
+//	}
 	
 	@Override
 	public void doRepayment(String date) {

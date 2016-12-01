@@ -1,10 +1,7 @@
 package com.yg.omp.test;
 
 import java.lang.reflect.Method;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -18,7 +15,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.yg.omp.base.PageModel;
 import com.yg.omp.entity.MonthlyRepayment;
-import com.yg.omp.entity.MonthlyRepaymentResponse;
 import com.yg.omp.job.MonthlyRepaymentJob;
 import com.yg.omp.job.TriggerListenerForBackup;
 import com.yg.omp.service.MonthlyRepaymentService;
@@ -86,24 +82,24 @@ public class TestMonthlyRepayment {
 		return list;
 	}
 
-	@Test
-	@Transactional//标明此方法需使用事务
-	@Rollback(false)//标明使用完此方法后事务不回滚,true时为回滚
-	public void testEndMonthlyRepayment(){
-		try{
-			List<MonthlyRepaymentResponse> list = new ArrayList<MonthlyRepaymentResponse>();
-			MonthlyRepaymentResponse res = new MonthlyRepaymentResponse();
-			res.setDeductionAmount(new BigDecimal(11.1).setScale(2,RoundingMode.HALF_UP));
-			res.setOrderNum("11111");
-			res.setPayTime(new Date());
-			res.setReId(111+"");
-			res.setStatus(1);
-			list.add(res);
-			callOmWebService.endMonthlyRepayment(list);
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-	}
+//	@Test
+//	@Transactional//标明此方法需使用事务
+//	@Rollback(false)//标明使用完此方法后事务不回滚,true时为回滚
+//	public void testEndMonthlyRepayment(){
+//		try{
+//			List<MonthlyRepaymentResponse> list = new ArrayList<MonthlyRepaymentResponse>();
+//			MonthlyRepaymentResponse res = new MonthlyRepaymentResponse();
+//			res.setDeductionAmount(new BigDecimal(11.1).setScale(2,RoundingMode.HALF_UP));
+//			res.setOrderNum("11111");
+//			res.setPayTime(new Date());
+//			res.setReId(111+"");
+//			res.setStatus(1);
+//			list.add(res);
+//			callOmWebService.endMonthlyRepayment(list);
+//		}catch(Exception e){
+//			e.printStackTrace();
+//		}
+//	}
 
 	@Test
 	@Rollback(false)//标明使用完此方法后事务不回滚,true时为回滚
