@@ -22,7 +22,7 @@
 	<!-- 开启AOP -->
 	<aop:aspectj-autoproxy/>
 	
-	<context:component-scan base-package="com.yg.omp">
+	<context:component-scan base-package="com.yezhihu.poem">
 		<context:exclude-filter type="annotation"  expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	
@@ -31,10 +31,7 @@
 		<property name="locations">
 			<list>
 				<value>classpath:/property/jdbc.properties</value>
-				<value>classpath:/property/rabbitmq.properties</value>
 				<value>classpath:/property/app.properties</value>
-				<value>classpath:/property/shiro.properties</value>
-				<!-- <value>classpath:/property/quartz.properties</value> -->
 			</list>
 		</property>
 	</bean>
@@ -95,7 +92,7 @@
         <property name="persistenceUnitName" value="mysqlPU"/>
         <property name="packagesToScan">
             <list>
-                <value>com.yg.omp.entity</value>
+                <value>com.yezhihu.poem.entity</value>
             </list>
         </property>
         <property name="jpaVendorAdapter">
@@ -123,7 +120,7 @@
         </property>
     </bean>
 	
-	<jpa:repositories base-package="com.yg.omp.dao" transaction-manager-ref="transactionManager" entity-manager-factory-ref="entityManagerFactory"/>
+	<jpa:repositories base-package="com.yezhihu.poem.dao" transaction-manager-ref="transactionManager" entity-manager-factory-ref="entityManagerFactory"/>
 	
 	<!-- 配置 JPA 使用的事务管理器 -->
 	<bean id="transactionManager"
@@ -131,35 +128,12 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory"/>
 	</bean>
 	
-	<!-- 事务管理器 -->
-	<!-- <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource" />
-	</bean> -->
-	
-	<!-- myBatis文件 -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<!-- 自动扫描entity目录, 配置包的基路径即可，多个包用;分割 -->
-		<property name="typeAliasesPackage" value="testSpring.entity"/>
-		<!-- 自动扫描mapping目录, 省掉Configuration.xml里的手工配置 -->
-		<property name="mapperLocations">
-			<list>
-				<value>classpath:com/yg/omp/mapping/*Mapper.xml</value>
-			</list>
-		</property>
-	</bean>
-	
-	<!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口-->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.yg.omp.mapper" />
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-	</bean>
-	
 	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 	<!-- 事务控制 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="save*" propagation="REQUIRED" rollback-for="Exception" />
+			<tx:method name="create*" propagation="REQUIRED" rollback-for="Exception" />
 			<tx:method name="do*" propagation="REQUIRED" rollback-for="Exception" />
 			<tx:method name="insert*" propagation="REQUIRED" rollback-for="Exception" />
 			<tx:method name="add*" propagation="REQUIRED" rollback-for="Exception" />
@@ -175,7 +149,7 @@
 	</tx:advice>
 	
 	<aop:config>
-		<aop:pointcut id="txPointcut" expression="execution(* com.yg.omp.service.impl.*.*(..))" />
+		<aop:pointcut id="txPointcut" expression="execution(* com.yezhihu.poem.service.impl.*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
 	</aop:config>
 </beans>

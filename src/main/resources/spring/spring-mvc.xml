@@ -11,7 +11,7 @@
 
 	
 	<!-- 自动扫描controller包下的所有类，使其认为spring mvc的控制器 -->
-	<context:component-scan base-package="com.yg.omp.controller">
+	<context:component-scan base-package="com.yezhihu.poem.controller">
 	</context:component-scan>
 	
 	<mvc:annotation-driven/>
@@ -38,28 +38,4 @@
 		<property name="prefix" value="/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
-	<bean id="customObjectMapper" class="com.yg.omp.base.CustomObjectMapper"/>
-	<!-- 处理json --> 
-	<mvc:annotation-driven>
-		<mvc:message-converters register-defaults="false">
-			<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
-				<property name="objectMapper" ref="customObjectMapper" />
-				<property name="supportedMediaTypes">
-					<list>
-						<value>text/html;charset=UTF-8</value>
-					</list>
-				</property>
-			</bean>
-			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
-				<property name="supportedMediaTypes">
-					<list>
-						<value>text/plain;charset=UTF-8</value>
-						<value>text/html;charset=UTF-8</value>
-					</list>
-				</property>
-			</bean>
-		</mvc:message-converters>
-	</mvc:annotation-driven>
-
 </beans>

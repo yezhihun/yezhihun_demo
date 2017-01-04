@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.yg.omp</groupId>
-	<artifactId>yg-omp</artifactId>
+	<groupId>com.yezhihu.poem</groupId>
+	<artifactId>poem</artifactId>
 	<packaging>war</packaging>
 	<version>0.1.1-SNAPSHOT</version>
-	<name>yg-omp Maven Webapp</name>
+	<name>poem Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -372,6 +372,11 @@
 		</dependency>
         <!-- jersey webservice end -->
 
+        <dependency>
+        	<groupId>com.alibaba</groupId>
+        	<artifactId>fastjson</artifactId>
+        	<version>1.1.23</version>
+        </dependency>
 	</dependencies>
 	<!-- 根据不同环境打包不同配置文件 -->
 	<profiles>
@@ -395,7 +400,7 @@
 	</profiles>
 	<!-- -->
 	<build>
-		<finalName>yg-omp</finalName>
+		<finalName>poem</finalName>
 
 		<resources>
 			<resource>
@@ -418,7 +423,7 @@
 				<version>2.1</version>
 				<configuration>
 					<port>8080</port>
-					<path>/yg-omp</path>
+					<path>/poem</path>
 					<uriEncoding>UTF-8</uriEncoding>
 					<server>tomcat7</server>
 				</configuration>
@@ -448,7 +453,7 @@
 				</resource> </resources> </configuration> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
 				<artifactId>maven-jar-plugin</artifactId> <version>2.4</version> <configuration> 
 				<archive> <manifest> <addClasspath>true</addClasspath> 指定配置文件中lib路径 <classpathPrefix>lib/</classpathPrefix> 
-				<mainClass>com.yg.omp.job.MonthlyRepaymentJob</mainClass> </manifest> </archive> 
+				<mainClass>com.yezhihu.poem.job.MonthlyRepaymentJob</mainClass> </manifest> </archive> 
 				</configuration> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
 				<artifactId>maven-dependency-plugin</artifactId> <version>2.1</version> <configuration> 
 				copy jar <outputDirectory>${basedir}/lib/</outputDirectory> </configuration> 
@@ -462,7 +467,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.1</version>
 				<configuration>
-					<warName>yg-omp-${env}</warName>
+					<warName>poem-${env}</warName>
 					<webResources>
 						<resource>
 							<directory>src/main/resources/${env}</directory>
