@@ -1,6 +1,7 @@
 package com.yezhihun.poem.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
-import com.yezhihun.poem.entity.Article;
 import com.yezhihun.poem.service.ArticleService;
 import com.yezhihun.poem.service.AuthorService;
 
@@ -34,7 +34,7 @@ public class ArticleController {
 	@ResponseBody
 	@RequestMapping(value="/showArticleList")
 	public JSONObject showArticleList(HttpServletRequest request){
-		List<Article> list = articleService.findAll();
+		List<Map<String,Object>> list = articleService.findAllArticle();
 		JSONObject json = new JSONObject();
 		json.put("list", list);
 		return json;

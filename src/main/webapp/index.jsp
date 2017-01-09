@@ -17,6 +17,8 @@
 <!-- 可选的Bootstrap主题文件（一般不用引入） -->
 <link href="${app}/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
 
+<link href="${app}/css/style.css" rel="stylesheet" type="text/css">
+
 <script src="${app}/dist/jquery/jquery.min.js"></script>
 <script src="${app}/dist/jquery/masonry.pkgd.min.js"></script>
 <script src="${app}/dist/jquery/masonry-docs.min.js"></script>
@@ -94,10 +96,11 @@
 		$.each(poems,function(index,poem){
 			var container = $(".container");
 			var pDiv = $("<div class='poem'></div>");
-			var pTitle = $("<span>"+poem.title+"</span><br/>");
-			var pAuthor = $("<span>"+poem.author+"</span><br/>");
-			var pContent = $("<span>"+formatPoem(poem.content)+"</span><br/>");
-			pDiv.append(pTitle).append(pAuthor).append(pContent);
+			var pImg = $('<div class="main-img"><img src="imgs/1.jpg"/></div>');
+			var pTitle = $("<div class='title-first'>"+poem.title+"</div><br/>");
+			var pAuthor = $("<div class='title-second'>"+poem.author+"</div><br/>");
+			var pContent = $("<div class='text'>"+formatPoem(poem.content)+"</div><br/>");
+			pDiv.append(pImg).append(pTitle).append(pAuthor).append(pContent);
 			
 			$newContainer.append(pDiv);
 		});

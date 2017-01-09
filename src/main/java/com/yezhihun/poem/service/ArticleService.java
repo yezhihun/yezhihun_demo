@@ -1,5 +1,8 @@
 package com.yezhihun.poem.service;
 
+import java.util.List;
+import java.util.Map;
+
 import com.yezhihun.poem.entity.Article;
 
 /**
@@ -29,4 +32,6 @@ public interface ArticleService extends BaseService<Article>{
 	public void createArticle() throws Exception;
 	
 	public void saveOrUpdate(Article article);
+	
+	public List<Map<String,Object>> findAllArticle();
 }

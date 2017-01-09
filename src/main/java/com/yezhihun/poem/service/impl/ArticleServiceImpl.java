@@ -54,7 +54,7 @@ public class ArticleServiceImpl extends AbstractBaseServiceImpl<Article> impleme
 	}
 
 	private  String  readFile() throws Exception {
-		File file = new File("D://poem.txt");
+		File file = new File("D://poem2.txt");
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "GBK"));
 		
 		StringBuilder sb = new StringBuilder();
@@ -120,5 +120,10 @@ public class ArticleServiceImpl extends AbstractBaseServiceImpl<Article> impleme
 			articleDao.save(article);
 		}
 		
+	}
+
+	@Override
+	public List<Map<String, Object>> findAllArticle() {
+		return articleDao.findAllArticle();
 	}
 }
