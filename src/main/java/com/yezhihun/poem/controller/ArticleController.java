@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
 import com.yezhihun.poem.entity.Article;
@@ -30,10 +31,12 @@ public class ArticleController {
 		return "app/article/articleList";
 	}
 	
+	@ResponseBody
 	@RequestMapping(value="/showArticleList")
-	public String showArticleList(HttpServletRequest request){
+	public JSONObject showArticleList(HttpServletRequest request){
 		List<Article> list = articleService.findAll();
-		String json = JSONObject.toJSONString(list);
+		JSONObject json = new JSONObject();
+		json.put("list", list);
 		return json;
 	}
 }

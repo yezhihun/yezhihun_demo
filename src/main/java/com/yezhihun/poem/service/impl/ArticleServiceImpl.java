@@ -62,6 +62,7 @@ public class ArticleServiceImpl extends AbstractBaseServiceImpl<Article> impleme
 		while ((tempLine = br.readLine()) != null) {
 			if(!StringUtils.isBlank(tempLine)){
 				sb.append("\r\n"+tempLine);
+//				sb.append(tempLine);
 			}
 		}
 		
@@ -93,7 +94,7 @@ public class ArticleServiceImpl extends AbstractBaseServiceImpl<Article> impleme
 			}
 			String author = content.substring(content.indexOf(aut)+aut.length(),content.indexOf("\r\n")).replace("(", "").replace(")", "").replace("（", "").replace("）", "").trim();
 			System.out.println("   作者："+author);
-			String con = content.substring(content.indexOf(author)+author.length()+1).trim();
+			String con = content.substring(content.indexOf(author)+author.length()+1).trim().replace("\r\n", " ");
 			System.out.println(con);
 			
 			Article article = new Article();

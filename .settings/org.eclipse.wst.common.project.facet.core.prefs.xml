@@ -1,7 +1,7 @@
 <root>
   <facet id="jpt.jaxb">
     <node name="classgen">
-      <attribute name="package" value="com.yezhihu.poem.mq.model"/>
+      <attribute name="package" value="com.yezhihun.poem.mq.model"/>
     </node>
   </facet>
   <facet id="jst.jaxrs">

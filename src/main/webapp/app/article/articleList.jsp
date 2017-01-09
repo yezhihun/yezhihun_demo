@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%
 	request.setAttribute("app", request.getContextPath());
 %>
@@ -11,23 +11,29 @@
 <meta name="author" content="">
 <title>文章列表</title>
 
+<script src="${app}/vendor/jquery/jquery.min.js"></script>
+
 <script type="text/javascript">
-	$(function() {
-		var _url = "${app}/articleController/showArticleList";
-		$.ajax({
-			url: _url,
-			type : "post",
-			dataType : "josn",
-			success : function(data){
-				var ul = $("#list");
-				$.each(data,val,index){
-					var li = $("<li id='article_"+val.id+"'></li>");
-					li.append(val.title);
-					ul.append(li);
-				}
-			}
-		});
+$(function() {
+	var _url = "${app}/articleController/showArticleList";
+	$.ajax({
+		url: _url,
+		type : "post",
+//		dataType : "josn",
+		success : function(data){
+			alert(data);
+			var ul = $("#list");
+			$.each(data,function(index,val){
+				var li = $("<li id='article_"+val.id+"'></li>");
+				li.append(val.title);
+				ul.append(li);
+			});
+		},
+		error : function(err){
+			alert(err);
+		}
 	});
+});
 
 </script>
 </head>

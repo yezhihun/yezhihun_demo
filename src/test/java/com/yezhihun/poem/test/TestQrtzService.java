@@ -1,5 +1,5 @@
 package com.yezhihun.poem.test;
-//package com.yezhihu.poem.test;
+//package com.yezhihun.poem.test;
 //
 //import java.text.SimpleDateFormat;
 //import java.util.Date;
@@ -15,8 +15,8 @@ package com.yezhihun.poem.test;
 //import org.springframework.test.context.ContextConfiguration;
 //import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 //
-//import com.yezhihu.poem.dao.QrtzTriggerDao;
-//import com.yezhihu.poem.service.QrtzTriggerService;
+//import com.yezhihun.poem.dao.QrtzTriggerDao;
+//import com.yezhihun.poem.service.QrtzTriggerService;
 //
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration({"classpath:spring/spring-application.xml"})

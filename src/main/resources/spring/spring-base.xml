@@ -22,7 +22,7 @@
 	<!-- 开启AOP -->
 	<aop:aspectj-autoproxy/>
 	
-	<context:component-scan base-package="com.yezhihu.poem">
+	<context:component-scan base-package="com.yezhihun.poem">
 		<context:exclude-filter type="annotation"  expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	
@@ -92,7 +92,7 @@
         <property name="persistenceUnitName" value="mysqlPU"/>
         <property name="packagesToScan">
             <list>
-                <value>com.yezhihu.poem.entity</value>
+                <value>com.yezhihun.poem.entity</value>
             </list>
         </property>
         <property name="jpaVendorAdapter">
@@ -120,7 +120,7 @@
         </property>
     </bean>
 	
-	<jpa:repositories base-package="com.yezhihu.poem.dao" transaction-manager-ref="transactionManager" entity-manager-factory-ref="entityManagerFactory"/>
+	<jpa:repositories base-package="com.yezhihun.poem.dao" transaction-manager-ref="transactionManager" entity-manager-factory-ref="entityManagerFactory"/>
 	
 	<!-- 配置 JPA 使用的事务管理器 -->
 	<bean id="transactionManager"
@@ -149,7 +149,7 @@
 	</tx:advice>
 	
 	<aop:config>
-		<aop:pointcut id="txPointcut" expression="execution(* com.yezhihu.poem.service.impl.*.*(..))" />
+		<aop:pointcut id="txPointcut" expression="execution(* com.yezhihun.poem.service.impl.*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
 	</aop:config>
 </beans>
