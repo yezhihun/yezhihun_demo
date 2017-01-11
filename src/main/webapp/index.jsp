@@ -70,11 +70,11 @@
 			dataType : "json",
 			success : function(data){
 				var $container = $('.container');
-				var $newContainer = createPoemDiv(data.list).css('opacity', 0);
-				//$container.append($newContainer).masonry('appended',  $newContainer);
 				
-				$container.imagesLoaded(function(){
-					$container.masonry('appended',  $newContainer);
+				var $newContainer = createPoemDiv(data.list);
+				$container.append($newContainer).masonry('appended', $newContainer, true);
+				$container.imagesLoaded( function(){
+					$container.masonry();
 				});
 			},
 			error : function(err){
@@ -86,15 +86,16 @@
 	$(window).scroll(function() {
 		
 		if($(document).height() - window.innerHeight - $(document).scrollTop() < 10) {
-			loadPoem();
+			appendPoem();
 		}
 		
 	});
 	
 	var createPoemDiv = function(poems){
 		var $newContainer = $("<div></div>");
+		
 		$.each(poems,function(index,poem){
-			var container = $(".container");
+			var container = $(".container");	
 			var pDiv = $("<div class='poem'></div>");
 			var pImg = $('<div class="main-img"><img src="imgs/1.jpg"/></div>');
 			var pTitle = $("<div class='title-first'>"+poem.title+"</div><br/>");
