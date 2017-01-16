@@ -2,7 +2,7 @@
 <%
 	request.setAttribute("app", request.getContextPath());
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,8 +93,9 @@
 			var pImg = $('<div class="main-img"><img src="imgs/1.jpg" /></div>');
 			var pTitle = $("<div class='title-first'>"+poem.title+"</div><br/>");
 			var pAuthor = $("<div class='title-second'>"+poem.author+"</div><br/>");
+			var pAudio = $("<audio style='width:45px;' class='poem-audio' src='${app}/1.aac' controls='controls'/>");
 			var pContent = $("<div class='text'>"+formatPoem(poem.content)+"</div><br/>");
-			pDiv.append(pImg).append(pTitle).append(pAuthor).append(pContent);
+			pDiv.append(pImg).append(pTitle).append(pAuthor).append(pAudio).append(pContent);
 			
 			$newContainer.append(pDiv);
 		});
@@ -110,7 +111,6 @@
 </script>
 </head>
 	<div class="container main">
-		<ul id="list clearfix"></ul>
 	</div>
 <body>
 </body>
