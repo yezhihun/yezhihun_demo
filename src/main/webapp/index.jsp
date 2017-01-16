@@ -12,10 +12,10 @@
 <title>文章列表</title>
 
 <!-- 新 Bootstrap 核心 CSS 文件 -->
-<link href="${app}/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<%--<link href="${app}/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
 <!-- 可选的Bootstrap主题文件（一般不用引入） -->
-<link href="${app}/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+<link href="${app}/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">--%>
 
 <link href="${app}/css/style.css" rel="stylesheet" type="text/css">
 
@@ -24,13 +24,6 @@
 <script src="${app}/dist/jquery/masonry-docs.min.js"></script>
 
 <script src="${app}/dist/js/bootstrap.min.js"></script>
-
-<style type="text/css">
-	.poem{
-		font-size: 18px;
-	    border-style: groove;
-	}
-</style>
 
 <script type="text/javascript">
 	$(function() {
@@ -92,12 +85,12 @@
 	});
 	
 	var createPoemDiv = function(poems){
-		var $newContainer = $("<div></div>");
+		var $newContainer = $("<ul class='clearfix'></ul>");
 		
 		$.each(poems,function(index,poem){
-			var container = $(".container");	
-			var pDiv = $("<div class='poem'></div>");
-			var pImg = $('<div class="main-img"><img src="imgs/1.jpg"/></div>');
+			var container = $(".container");
+			var pDiv = $("<li class='poem'></li>");
+			var pImg = $('<div class="main-img"><img src="imgs/1.jpg" /></div>');
 			var pTitle = $("<div class='title-first'>"+poem.title+"</div><br/>");
 			var pAuthor = $("<div class='title-second'>"+poem.author+"</div><br/>");
 			var pContent = $("<div class='text'>"+formatPoem(poem.content)+"</div><br/>");
@@ -116,13 +109,8 @@
 
 </script>
 </head>
-	<div class="container">
-		<ul id="list"></ul>
-		<!-- <div>
-			<h3>静夜思</h1>
-			<span>床前明月光,疑是地上霜。</span><br/>
-			<span>举头望明月,低头思故乡。</span>
-		</div> -->
+	<div class="container main">
+		<ul id="list clearfix"></ul>
 	</div>
 <body>
 </body>

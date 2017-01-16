@@ -18,15 +18,18 @@ a:hover{text-decoration:none;}
 
 .clear{ clear:both}
 
-html,body{background:#F0EFEE}
+html,body{background:url(../imgs/bg.png) repeat;}
 
 
 
 
-.main{ height:100%; width:1100px; margin:0px auto;}
-.main ul li{ float:left; width:230px; margin:10px; background:#fff; border:1px solid #dedede; text-align:center; padding:10px; color:#717171; font-size:14px;font-family:"微软雅黑","宋体";}
+.main{ height:100%; width:1100px; margin:100px auto;}
+.main ul li{ float:left; width:250px; margin:10px; background:#fff;border-radius:6px; text-align:center;color:#717171; font-size:14px;font-family:"微软雅黑","宋体";}
+.main ul li:hover {transform: scale(1.2); z-index: 999}
 
-.main-img{ overflow:hidden; width:230px; height:180px;}
+.main-img img{height: 220px;width: 250px;}
 .title-first{ font-size:16px; height:40px; line-height:40px;font-family:"微软雅黑","宋体"; font-weight:bold; border-bottom:1px dashed #dedede}
 .title-second{ color:#c1c1c1; font-size:14px;font-family:"微软雅黑","宋体"; margin:5px 0px;}
 .text{ font-size:14px;font-family:"微软雅黑","宋体"; line-height:24px; margin:5px 0px;}
+
+.main ul .poem{box-shadow: -10px 10px 10px #d4cfcf; }
