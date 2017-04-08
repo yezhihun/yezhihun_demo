@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 
 import com.yezhihun.poem.entity.Article;
@@ -20,6 +21,7 @@ public class Reptile {
 		String result = readFile();
 		
 		List<Map<String,Object>> list = convert(result);
+		FileUtils.readLines(new File(""));
 	}
 	
 	private static String  readFile() throws Exception {
@@ -60,6 +62,7 @@ public class Reptile {
 			}else if(content.indexOf(aut2)!=-1){
 				aut = aut2;
 			}
+			//TODO test
 			String author = content.substring(content.indexOf(aut)+aut.length(),content.indexOf("\r\n")).replace("(", "").replace(")", "").replace("（", "").replace("）", "").trim();
 			System.out.println("   作者："+author);
 			String con = content.substring(content.indexOf(author)+author.length()+1).trim();
@@ -79,5 +82,26 @@ public class Reptile {
 			list.add(map);
 		}
 		return list;
+	}
+
+	public void convert(){
+		int[] arry = {50,20,10,5,2,1};
+
+		for(int i=0;i<arry.length-1;i++){
+			int sum = arry[i];
+			String s = "";
+			for(int j=i+1;j<arry.length-1;j++){
+				int next = arry[j];
+				if(sum==next){
+					s += (next+" ");
+					break;
+				}
+				if(sum/2>next){
+
+				}
+			}
+
+
+		}
 	}
 }
