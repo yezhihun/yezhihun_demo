@@ -11,7 +11,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="poem" target="1.8" />
       <module name="yezhihun_demo" target="1.9" />
     </bytecodeTargetLevel>
   </component>
