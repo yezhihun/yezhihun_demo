@@ -6,11 +6,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BaseDao<T> extends JpaRepository<T, Integer> {
+interface BaseDao<T> extends JpaRepository<T, Integer> {
 
-	public void update(T t);
+	void update(T t);
 	
-	public void update(T oldObj, T newObj);
+	void update(T oldObj, T newObj);
 	
 	/**
 	 * 
@@ -19,7 +19,7 @@ public interface BaseDao<T> extends JpaRepository<T, Integer> {
 	* @return void
 	* @throws
 	 */
-	public void batchSave(List<T> t);
+	void batchSave(List<T> t);
 	
 	/**
 	 * 
@@ -28,7 +28,7 @@ public interface BaseDao<T> extends JpaRepository<T, Integer> {
 	* @return void
 	* @throws
 	 */
-	public void batchUpdate(List<T> t);
+	void batchUpdate(List<T> t);
 	
 	/**
 	 * 
@@ -37,5 +37,5 @@ public interface BaseDao<T> extends JpaRepository<T, Integer> {
 	* @return void
 	* @throws
 	 */
-	public void batchSaveOrUpdate(List<T> t);
+	void batchSaveOrUpdate(List<T> t);
 }

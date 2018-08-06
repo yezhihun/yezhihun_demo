@@ -31,9 +31,9 @@
 		<property name="locations">
 			<list>
 				<value>classpath:/property/jdbc.properties</value>
-				<value>classpath:/property/rabbitmq.properties</value>
+				<!--<value>classpath:/property/rabbitmq.properties</value>-->
 				<value>classpath:/property/app.properties</value>
-				<value>classpath:/property/shiro.properties</value>
+				<!--<value>classpath:/property/shiro.properties</value>-->
 				<!-- <value>classpath:/property/quartz.properties</value> -->
 			</list>
 		</property>

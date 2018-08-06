@@ -17,7 +17,6 @@ import com.yg.omp.base.PageModel;
 import com.yg.omp.entity.MonthlyRepayment;
 import com.yg.omp.job.MonthlyRepaymentJob;
 import com.yg.omp.job.TriggerListenerForBackup;
-import com.yg.omp.service.MonthlyRepaymentService;
 import com.yg.omp.utils.enums.DeductStatus;
 import com.yg.omp.webservice.CallOmWebService;
 
