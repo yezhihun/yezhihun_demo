@@ -12,7 +12,7 @@
 		<!-- 主要依赖库的版本定义 -->
 		<springframework.version>4.0.6.RELEASE</springframework.version>
 		<cxf.version>2.2.9</cxf.version>
-		<jdk.version>1.8</jdk.version>
+		<jdk.version>1.9</jdk.version>
 		<slf4j.version>1.6.4</slf4j.version>
 	</properties>
 

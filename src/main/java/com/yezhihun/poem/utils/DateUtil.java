@@ -9,7 +9,7 @@ import org.apache.commons.lang.time.DateUtils;
 
 /**
  * 时间工具类
- * @author 鲁砚琨
+ * @author tianye
  */
 public class DateUtil {
 
