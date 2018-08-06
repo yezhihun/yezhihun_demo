@@ -1,14 +1,21 @@
 package com.yg.omp.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /** 
  * @author 
  */
+@Entity(name="tb_building")
 public class Building implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 9142804784808249795L;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Integer id;
 
     /**

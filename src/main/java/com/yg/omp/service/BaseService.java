@@ -17,7 +17,7 @@ import java.util.List;
  * 2016年8月29日下午3:07:04    Administrator       V1.0        
  * </pre>
  */
-interface BaseService<T> {
+public interface BaseService<T> {
 
 	void deleteByPrimaryKey(Integer id);
 

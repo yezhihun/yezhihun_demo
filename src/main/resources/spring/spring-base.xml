@@ -95,7 +95,7 @@
         <property name="persistenceUnitName" value="mysqlPU"/>
         <property name="packagesToScan">
             <list>
-                <value>com.yg.omp.entity</value>
+                <value>com.yg.omp.model</value>
             </list>
         </property>
         <property name="jpaVendorAdapter">
