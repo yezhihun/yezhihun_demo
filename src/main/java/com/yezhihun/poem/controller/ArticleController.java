@@ -1,18 +1,17 @@
 package com.yezhihun.poem.controller;
 
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.alibaba.fastjson.JSONObject;
+import com.yezhihun.poem.service.ArticleService;
+import com.yezhihun.poem.service.AuthorService;
+import org.apache.xpath.operations.String;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSONObject;
-import com.yezhihun.poem.service.ArticleService;
-import com.yezhihun.poem.service.AuthorService;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value="/articleController")
@@ -20,6 +19,7 @@ public class ArticleController {
 
 	@Autowired
 	private ArticleService articleService;
+
 	
 	@Autowired
 	private AuthorService authorService;
