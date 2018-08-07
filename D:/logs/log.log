@@ -5091,4 +5091,280 @@ Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extensio
 Replaced the http destination factory with servlet transport factory
  [INFO ] 2018-08-07 15:39:21,561 org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:498)
 FrameworkServlet 'springMvc': initialization completed in 2975 ms
+ [INFO ] 2018-08-07 18:34:03,056 org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:285)
+Root WebApplicationContext: initialization started
+ [INFO ] 2018-08-07 18:34:03,309 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:513)
+Refreshing Root WebApplicationContext: startup date [Tue Aug 07 18:34:03 CST 2018]; root of context hierarchy
+ [INFO ] 2018-08-07 18:34:03,379 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/spring-application.xml]
+ [INFO ] 2018-08-07 18:34:03,513 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/spring-base.xml]
+ [INFO ] 2018-08-07 18:34:04,591 org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [property/jdbc.properties]
+ [INFO ] 2018-08-07 18:34:04,592 org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [property/app.properties]
+ [INFO ] 2018-08-07 18:34:04,606 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:141)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO ] 2018-08-07 18:34:05,090 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'wall-filter' of type [class com.alibaba.druid.wall.WallFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:34:05,837 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:667)
+{dataSource-1} inited
+ [INFO ] 2018-08-07 18:34:05,838 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'dataSource' of type [class com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:34:05,899 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter#6a8dcbf5' of type [class org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:34:05,935 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:283)
+Building JPA container EntityManagerFactory for persistence unit 'mysqlPU'
+ [WARN ] 2018-08-07 18:34:05,936 org.hibernate.ejb.HibernatePersistence.logDeprecation(HibernatePersistence.java:58)
+HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+ [INFO ] 2018-08-07 18:34:05,983 org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation(LogHelper.java:46)
+HHH000204: Processing PersistenceUnitInfo [
+	name: mysqlPU
+	...]
+ [INFO ] 2018-08-07 18:34:06,111 org.hibernate.Version.logVersion(Version.java:54)
+HHH000412: Hibernate Core {4.3.6.Final}
+ [INFO ] 2018-08-07 18:34:06,117 org.hibernate.cfg.Environment.<clinit>(Environment.java:239)
+HHH000206: hibernate.properties not found
+ [INFO ] 2018-08-07 18:34:06,121 org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:346)
+HHH000021: Bytecode provider name : javassist
+ [INFO ] 2018-08-07 18:34:06,673 org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(JavaReflectionManager.java:66)
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+ [INFO ] 2018-08-07 18:34:06,852 org.hibernate.dialect.Dialect.<init>(Dialect.java:145)
+HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO ] 2018-08-07 18:34:07,260 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:47)
+HHH000397: Using ASTQueryTranslatorFactory
+ [WARN ] 2018-08-07 18:34:07,291 org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:367)
+Unrecognized value for "hibernate.hbm2ddl.auto": none
+ [WARN ] 2018-08-07 18:34:07,333 net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:134)
+No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/tianye/.m2/repository/net/sf/ehcache/ehcache-core/2.4.3/ehcache-core-2.4.3.jar!/ehcache-failsafe.xml
+ [INFO ] 2018-08-07 18:34:07,488 org.hibernate.cache.spi.UpdateTimestampsCache.<init>(UpdateTimestampsCache.java:72)
+HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+ [WARN ] 2018-08-07 18:34:07,496 org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory.getCache(AbstractEhcacheRegionFactory.java:179)
+HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+ [INFO ] 2018-08-07 18:34:07,549 org.hibernate.cache.internal.StandardQueryCache.<init>(StandardQueryCache.java:90)
+HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+ [WARN ] 2018-08-07 18:34:07,550 org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory.getCache(AbstractEhcacheRegionFactory.java:179)
+HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+ [INFO ] 2018-08-07 18:34:09,355 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'entityManagerFactory' of type [class org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:34:09,420 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:34:09,451 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:34:09,761 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:34:11,265 org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+Root WebApplicationContext: initialization completed in 8203 ms
+ [INFO ] 2018-08-07 18:34:11,309 org.jasig.cas.client.util.AbstractConfigurationFilter.getPropertyFromInitParams(AbstractConfigurationFilter.java:105)
+Property [artifactParameterName] not found.  Using default value [ticket]
+ [INFO ] 2018-08-07 18:34:11,310 org.jasig.cas.client.util.AbstractConfigurationFilter.getPropertyFromInitParams(AbstractConfigurationFilter.java:105)
+Property [logoutParameterName] not found.  Using default value [logoutRequest]
+ [INFO ] 2018-08-07 18:34:12,898 org.apache.cxf.transport.servlet.CXFServlet.updateContext(CXFServlet.java:139)
+Load the bus with application context
+ [INFO ] 2018-08-07 18:34:12,923 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:513)
+Refreshing org.apache.cxf.bus.spring.BusApplicationContext@2fec3642: startup date [Tue Aug 07 18:34:12 CST 2018]; parent: Root WebApplicationContext
+ [INFO ] 2018-08-07 18:34:12,995 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+ [INFO ] 2018-08-07 18:34:13,372 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+ [INFO ] 2018-08-07 18:34:13,379 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-xml.xml]
+ [INFO ] 2018-08-07 18:34:13,383 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-http.xml]
+ [INFO ] 2018-08-07 18:34:13,386 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-addr.xml]
+ [INFO ] 2018-08-07 18:34:13,391 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-jaxws.xml]
+ [INFO ] 2018-08-07 18:34:13,396 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-ws-security.xml]
+ [INFO ] 2018-08-07 18:34:14,598 org.apache.cxf.transport.servlet.AbstractCXFServlet.replaceDestinationFactory(AbstractCXFServlet.java:122)
+Replaced the http destination factory with servlet transport factory
+ [INFO ] 2018-08-07 18:34:14,699 org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:479)
+FrameworkServlet 'springMvc': initialization started
+ [INFO ] 2018-08-07 18:34:14,709 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:513)
+Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Tue Aug 07 18:34:14 CST 2018]; parent: Root WebApplicationContext
+ [INFO ] 2018-08-07 18:34:14,710 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/spring-mvc.xml]
+ [INFO ] 2018-08-07 18:34:14,894 org.springframework.beans.factory.support.DefaultListableBeanFactory.registerBeanDefinition(DefaultListableBeanFactory.java:749)
+Overriding bean definition for bean 'mvcContentNegotiationManager': replacing [Root bean: class [org.springframework.web.accept.ContentNegotiationManagerFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [org.springframework.web.accept.ContentNegotiationManagerFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+ [INFO ] 2018-08-07 18:34:14,895 org.springframework.beans.factory.support.DefaultListableBeanFactory.registerBeanDefinition(DefaultListableBeanFactory.java:749)
+Overriding bean definition for bean 'mvcUriComponentsContributor': replacing [Root bean: class [org.springframework.web.servlet.config.AnnotationDrivenBeanDefinitionParser$CompositeUriComponentsContributorFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [org.springframework.web.servlet.config.AnnotationDrivenBeanDefinitionParser$CompositeUriComponentsContributorFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+ [INFO ] 2018-08-07 18:34:14,999 org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [property/app.properties]
+ [INFO ] 2018-08-07 18:34:15,005 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:141)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO ] 2018-08-07 18:34:15,688 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:197)
+Mapped "{[/dataMonitor/selectAllBuilding],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.yg.omp.controller.DataMonitorController.selectAllBuilding()
+ [INFO ] 2018-08-07 18:34:16,912 org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:315)
+Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+ [INFO ] 2018-08-07 18:34:16,922 org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:315)
+Mapped URL path [/img/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO ] 2018-08-07 18:34:16,924 org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:315)
+Mapped URL path [/images/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO ] 2018-08-07 18:34:16,928 org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:315)
+Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+ [INFO ] 2018-08-07 18:34:16,930 org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:315)
+Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+ [INFO ] 2018-08-07 18:34:16,963 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:197)
+Mapped "{[/dataMonitor/selectAllBuilding],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.yg.omp.controller.DataMonitorController.selectAllBuilding()
+ [INFO ] 2018-08-07 18:34:17,028 org.apache.cxf.transport.servlet.CXFServlet.updateContext(CXFServlet.java:139)
+Load the bus with application context
+ [INFO ] 2018-08-07 18:34:17,030 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:513)
+Refreshing org.apache.cxf.bus.spring.BusApplicationContext@b9fa61c: startup date [Tue Aug 07 18:34:17 CST 2018]; parent: WebApplicationContext for namespace 'springMvc-servlet'
+ [INFO ] 2018-08-07 18:34:17,036 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+ [INFO ] 2018-08-07 18:34:17,045 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+ [INFO ] 2018-08-07 18:34:17,049 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-xml.xml]
+ [INFO ] 2018-08-07 18:34:17,051 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-http.xml]
+ [INFO ] 2018-08-07 18:34:17,054 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-addr.xml]
+ [INFO ] 2018-08-07 18:34:17,057 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-jaxws.xml]
+ [INFO ] 2018-08-07 18:34:17,060 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-ws-security.xml]
+ [INFO ] 2018-08-07 18:34:17,127 org.apache.cxf.transport.servlet.AbstractCXFServlet.replaceDestinationFactory(AbstractCXFServlet.java:122)
+Replaced the http destination factory with servlet transport factory
+ [INFO ] 2018-08-07 18:34:17,130 org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:498)
+FrameworkServlet 'springMvc': initialization completed in 2431 ms
+ [INFO ] 2018-08-07 18:35:33,067 org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:285)
+Root WebApplicationContext: initialization started
+ [INFO ] 2018-08-07 18:35:33,282 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:513)
+Refreshing Root WebApplicationContext: startup date [Tue Aug 07 18:35:33 CST 2018]; root of context hierarchy
+ [INFO ] 2018-08-07 18:35:33,345 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/spring-application.xml]
+ [INFO ] 2018-08-07 18:35:33,501 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/spring-base.xml]
+ [INFO ] 2018-08-07 18:35:34,507 org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [property/jdbc.properties]
+ [INFO ] 2018-08-07 18:35:34,509 org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [property/app.properties]
+ [INFO ] 2018-08-07 18:35:34,519 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:141)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO ] 2018-08-07 18:35:34,786 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'wall-filter' of type [class com.alibaba.druid.wall.WallFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:35:35,337 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:667)
+{dataSource-1} inited
+ [INFO ] 2018-08-07 18:35:35,337 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'dataSource' of type [class com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:35:35,386 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter#1a31051a' of type [class org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:35:35,411 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:283)
+Building JPA container EntityManagerFactory for persistence unit 'mysqlPU'
+ [WARN ] 2018-08-07 18:35:35,412 org.hibernate.ejb.HibernatePersistence.logDeprecation(HibernatePersistence.java:58)
+HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+ [INFO ] 2018-08-07 18:35:35,437 org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation(LogHelper.java:46)
+HHH000204: Processing PersistenceUnitInfo [
+	name: mysqlPU
+	...]
+ [INFO ] 2018-08-07 18:35:35,589 org.hibernate.Version.logVersion(Version.java:54)
+HHH000412: Hibernate Core {4.3.6.Final}
+ [INFO ] 2018-08-07 18:35:35,592 org.hibernate.cfg.Environment.<clinit>(Environment.java:239)
+HHH000206: hibernate.properties not found
+ [INFO ] 2018-08-07 18:35:35,595 org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:346)
+HHH000021: Bytecode provider name : javassist
+ [INFO ] 2018-08-07 18:35:36,072 org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(JavaReflectionManager.java:66)
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+ [INFO ] 2018-08-07 18:35:36,237 org.hibernate.dialect.Dialect.<init>(Dialect.java:145)
+HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO ] 2018-08-07 18:35:36,677 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:47)
+HHH000397: Using ASTQueryTranslatorFactory
+ [WARN ] 2018-08-07 18:35:36,713 org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:367)
+Unrecognized value for "hibernate.hbm2ddl.auto": none
+ [WARN ] 2018-08-07 18:35:36,757 net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:134)
+No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/tianye/.m2/repository/net/sf/ehcache/ehcache-core/2.4.3/ehcache-core-2.4.3.jar!/ehcache-failsafe.xml
+ [INFO ] 2018-08-07 18:35:36,885 org.hibernate.cache.spi.UpdateTimestampsCache.<init>(UpdateTimestampsCache.java:72)
+HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+ [WARN ] 2018-08-07 18:35:36,893 org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory.getCache(AbstractEhcacheRegionFactory.java:179)
+HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+ [INFO ] 2018-08-07 18:35:36,941 org.hibernate.cache.internal.StandardQueryCache.<init>(StandardQueryCache.java:90)
+HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+ [WARN ] 2018-08-07 18:35:36,943 org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory.getCache(AbstractEhcacheRegionFactory.java:179)
+HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+ [INFO ] 2018-08-07 18:35:38,616 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'entityManagerFactory' of type [class org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:35:38,660 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:35:38,687 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:35:38,844 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:309)
+Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO ] 2018-08-07 18:35:40,114 org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+Root WebApplicationContext: initialization completed in 7043 ms
+ [INFO ] 2018-08-07 18:35:40,161 org.jasig.cas.client.util.AbstractConfigurationFilter.getPropertyFromInitParams(AbstractConfigurationFilter.java:105)
+Property [artifactParameterName] not found.  Using default value [ticket]
+ [INFO ] 2018-08-07 18:35:40,162 org.jasig.cas.client.util.AbstractConfigurationFilter.getPropertyFromInitParams(AbstractConfigurationFilter.java:105)
+Property [logoutParameterName] not found.  Using default value [logoutRequest]
+ [INFO ] 2018-08-07 18:35:40,605 org.apache.cxf.transport.servlet.CXFServlet.updateContext(CXFServlet.java:139)
+Load the bus with application context
+ [INFO ] 2018-08-07 18:35:40,625 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:513)
+Refreshing org.apache.cxf.bus.spring.BusApplicationContext@5eb82cf: startup date [Tue Aug 07 18:35:40 CST 2018]; parent: Root WebApplicationContext
+ [INFO ] 2018-08-07 18:35:40,676 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+ [INFO ] 2018-08-07 18:35:40,916 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+ [INFO ] 2018-08-07 18:35:40,933 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-xml.xml]
+ [INFO ] 2018-08-07 18:35:40,953 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-http.xml]
+ [INFO ] 2018-08-07 18:35:40,968 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-addr.xml]
+ [INFO ] 2018-08-07 18:35:40,976 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-jaxws.xml]
+ [INFO ] 2018-08-07 18:35:40,980 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-ws-security.xml]
+ [INFO ] 2018-08-07 18:35:42,020 org.apache.cxf.transport.servlet.AbstractCXFServlet.replaceDestinationFactory(AbstractCXFServlet.java:122)
+Replaced the http destination factory with servlet transport factory
+ [INFO ] 2018-08-07 18:35:42,051 org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:479)
+FrameworkServlet 'springMvc': initialization started
+ [INFO ] 2018-08-07 18:35:42,054 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:513)
+Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Tue Aug 07 18:35:42 CST 2018]; parent: Root WebApplicationContext
+ [INFO ] 2018-08-07 18:35:42,055 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/spring-mvc.xml]
+ [INFO ] 2018-08-07 18:35:42,180 org.springframework.beans.factory.support.DefaultListableBeanFactory.registerBeanDefinition(DefaultListableBeanFactory.java:749)
+Overriding bean definition for bean 'mvcContentNegotiationManager': replacing [Root bean: class [org.springframework.web.accept.ContentNegotiationManagerFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [org.springframework.web.accept.ContentNegotiationManagerFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+ [INFO ] 2018-08-07 18:35:42,182 org.springframework.beans.factory.support.DefaultListableBeanFactory.registerBeanDefinition(DefaultListableBeanFactory.java:749)
+Overriding bean definition for bean 'mvcUriComponentsContributor': replacing [Root bean: class [org.springframework.web.servlet.config.AnnotationDrivenBeanDefinitionParser$CompositeUriComponentsContributorFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [org.springframework.web.servlet.config.AnnotationDrivenBeanDefinitionParser$CompositeUriComponentsContributorFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+ [INFO ] 2018-08-07 18:35:42,233 org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [property/app.properties]
+ [INFO ] 2018-08-07 18:35:42,236 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:141)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO ] 2018-08-07 18:35:42,643 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:197)
+Mapped "{[/dataMonitor/selectAllBuilding],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.yg.omp.controller.DataMonitorController.selectAllBuilding()
+ [INFO ] 2018-08-07 18:35:43,647 org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:315)
+Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+ [INFO ] 2018-08-07 18:35:43,655 org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:315)
+Mapped URL path [/img/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO ] 2018-08-07 18:35:43,657 org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:315)
+Mapped URL path [/images/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO ] 2018-08-07 18:35:43,659 org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:315)
+Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+ [INFO ] 2018-08-07 18:35:43,661 org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:315)
+Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+ [INFO ] 2018-08-07 18:35:43,687 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:197)
+Mapped "{[/dataMonitor/selectAllBuilding],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.yg.omp.controller.DataMonitorController.selectAllBuilding()
+ [INFO ] 2018-08-07 18:35:43,750 org.apache.cxf.transport.servlet.CXFServlet.updateContext(CXFServlet.java:139)
+Load the bus with application context
+ [INFO ] 2018-08-07 18:35:43,752 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:513)
+Refreshing org.apache.cxf.bus.spring.BusApplicationContext@5d1c69de: startup date [Tue Aug 07 18:35:43 CST 2018]; parent: WebApplicationContext for namespace 'springMvc-servlet'
+ [INFO ] 2018-08-07 18:35:43,757 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+ [INFO ] 2018-08-07 18:35:43,763 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+ [INFO ] 2018-08-07 18:35:43,767 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-xml.xml]
+ [INFO ] 2018-08-07 18:35:43,769 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-http.xml]
+ [INFO ] 2018-08-07 18:35:43,772 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-addr.xml]
+ [INFO ] 2018-08-07 18:35:43,775 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-jaxws.xml]
+ [INFO ] 2018-08-07 18:35:43,778 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-ws-security.xml]
+ [INFO ] 2018-08-07 18:35:43,831 org.apache.cxf.transport.servlet.AbstractCXFServlet.replaceDestinationFactory(AbstractCXFServlet.java:122)
+Replaced the http destination factory with servlet transport factory
+ [INFO ] 2018-08-07 18:35:43,835 org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:498)
+FrameworkServlet 'springMvc': initialization completed in 1783 ms
  

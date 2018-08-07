@@ -89,29 +89,29 @@
 		<session-timeout>30</session-timeout>
 	</session-config>
 	
-	<servlet>  
-        <servlet-name>JerseyServlet</servlet-name>  
-        <servlet-class>  
-            com.sun.jersey.spi.spring.container.servlet.SpringServlet  
-        </servlet-class>  
-        <init-param>  
-            <param-name>  
-                com.sun.jersey.config.property.packages  
-            </param-name>  
-            <!-- 系统启动时扫描的包的路径-->    
-            <param-value>com.yg.omp.webservices</param-value>  
-        </init-param>  
-        <init-param>  
-            <param-name>  
-                com.sun.jersey.api.json.POJOMappingFeature  
-            </param-name>  
-            <param-value>true</param-value>  
-        </init-param>  
-        <load-on-startup>1</load-on-startup>  
-  
-    </servlet>  
-    <servlet-mapping>  
-        <servlet-name>JerseyServlet</servlet-name>  
-        <url-pattern>/webservice/*</url-pattern>  
-    </servlet-mapping> 
+	<!--<servlet>  -->
+        <!--<servlet-name>JerseyServlet</servlet-name>  -->
+        <!--<servlet-class>  -->
+            <!--com.sun.jersey.spi.spring.container.servlet.SpringServlet  -->
+        <!--</servlet-class>  -->
+        <!--<init-param>  -->
+            <!--<param-name>  -->
+                <!--com.sun.jersey.config.property.packages  -->
+            <!--</param-name>  -->
+            <!--&lt;!&ndash; 系统启动时扫描的包的路径&ndash;&gt;    -->
+            <!--<param-value>com.yg.omp.webservices</param-value>  -->
+        <!--</init-param>  -->
+        <!--<init-param>  -->
+            <!--<param-name>  -->
+                <!--com.sun.jersey.api.json.POJOMappingFeature  -->
+            <!--</param-name>  -->
+            <!--<param-value>true</param-value>  -->
+        <!--</init-param>  -->
+        <!--<load-on-startup>1</load-on-startup>  -->
+  <!---->
+    <!--</servlet>  -->
+    <!--<servlet-mapping>  -->
+        <!--<servlet-name>JerseyServlet</servlet-name>  -->
+        <!--<url-pattern>/webservice/*</url-pattern>  -->
+    <!--</servlet-mapping> -->
 </web-app>
