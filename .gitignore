@@ -20,3 +20,4 @@ node_modules
 *.tmp
 release.properties
 /.springBeans
+*.iml
