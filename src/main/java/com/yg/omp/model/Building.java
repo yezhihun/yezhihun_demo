@@ -1,9 +1,6 @@
 package com.yg.omp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /** 
@@ -22,42 +19,49 @@ public class Building implements Serializable {
      * 建筑名称
      * building_name
      */
+    @Column(name="building_name")
     private String buildingName;
 
     /**
      * 编号（非上传数据代码）
      * building_no
      */
+    @Column(name="building_no")
     private String buildingNo;
 
     /**
      * 建筑类型（1-变电所；2-建筑楼层）
      * building_type
      */
+    @Column(name="building_type")
     private Integer buildingType;
 
     /**
      * 建筑排序，用于列表展示排序及下拉框排序
      * building_sort
      */
+    @Column(name="building_sort")
     private Integer buildingSort;
 
     /**
      * 建筑展示状态
      * building_showstatus
      */
+    @Column(name="building_showstatus")
     private Integer buildingShowstatus;
 
     /**
      * 所属区域ID
      * region_id
      */
+    @Column(name="region_id")
     private Integer regionId;
 
     /**
      * 备注信息
      * building_remark
      */
+    @Column(name="building_remark")
     private String buildingRemark;
 
     /** 

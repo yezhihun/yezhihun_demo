@@ -1,153 +1,180 @@
 package com.yg.omp.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-/** 
- * @author 
+/**
+ * @author
  */
+@Entity(name = "tb_room")
 public class Room implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 5418330347824473931L;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Integer id;
 
+    @Column(name = "room_no")
     private String roomNo;
 
+    @Column(name = "room_name")
     private String roomName;
 
+    @Column(name = "floor_id")
     private Integer floorId;
 
+    @Column(name = "room_sort")
     private String roomSort;
 
+    @Column(name = "room_showstatus")
     private Integer roomShowstatus;
 
+    @Column(name = "create_time")
     private Date createTime;
 
+    @Column(name = "update_time")
     private Date updateTime;
 
-    /** 
+    /**
      * 获取 tb_room.id
+     *
      * @return tb_room.id
      */
     public final Integer getId() {
         return id;
     }
 
-    /** 
+    /**
      * 设置 tb_room.id
+     *
      * @param id tb_room.id
      */
     public final void setId(Integer id) {
         this.id = id;
     }
 
-    /** 
+    /**
      * 获取 tb_room.room_no
+     *
      * @return tb_room.room_no
      */
     public final String getRoomNo() {
         return roomNo;
     }
 
-    /** 
+    /**
      * 设置 tb_room.room_no
+     *
      * @param roomNo tb_room.room_no
      */
     public final void setRoomNo(String roomNo) {
         this.roomNo = roomNo == null ? null : roomNo.trim();
     }
 
-    /** 
+    /**
      * 获取 tb_room.room_name
+     *
      * @return tb_room.room_name
      */
     public final String getRoomName() {
         return roomName;
     }
 
-    /** 
+    /**
      * 设置 tb_room.room_name
+     *
      * @param roomName tb_room.room_name
      */
     public final void setRoomName(String roomName) {
         this.roomName = roomName == null ? null : roomName.trim();
     }
 
-    /** 
+    /**
      * 获取 tb_room.floor_id
+     *
      * @return tb_room.floor_id
      */
     public final Integer getFloorId() {
         return floorId;
     }
 
-    /** 
+    /**
      * 设置 tb_room.floor_id
+     *
      * @param floorId tb_room.floor_id
      */
     public final void setFloorId(Integer floorId) {
         this.floorId = floorId;
     }
 
-    /** 
+    /**
      * 获取 tb_room.room_sort
+     *
      * @return tb_room.room_sort
      */
     public final String getRoomSort() {
         return roomSort;
     }
 
-    /** 
+    /**
      * 设置 tb_room.room_sort
+     *
      * @param roomSort tb_room.room_sort
      */
     public final void setRoomSort(String roomSort) {
         this.roomSort = roomSort == null ? null : roomSort.trim();
     }
 
-    /** 
+    /**
      * 获取 tb_room.room_showstatus
+     *
      * @return tb_room.room_showstatus
      */
     public final Integer getRoomShowstatus() {
         return roomShowstatus;
     }
 
-    /** 
+    /**
      * 设置 tb_room.room_showstatus
+     *
      * @param roomShowstatus tb_room.room_showstatus
      */
     public final void setRoomShowstatus(Integer roomShowstatus) {
         this.roomShowstatus = roomShowstatus;
     }
 
-    /** 
+    /**
      * 获取 tb_room.create_time
+     *
      * @return tb_room.create_time
      */
     public final Date getCreateTime() {
         return createTime;
     }
 
-    /** 
+    /**
      * 设置 tb_room.create_time
+     *
      * @param createTime tb_room.create_time
      */
     public final void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    /** 
+    /**
      * 获取 tb_room.update_time
+     *
      * @return tb_room.update_time
      */
     public final Date getUpdateTime() {
         return updateTime;
     }
 
-    /** 
+    /**
      * 设置 tb_room.update_time
+     *
      * @param updateTime tb_room.update_time
      */
     public final void setUpdateTime(Date updateTime) {

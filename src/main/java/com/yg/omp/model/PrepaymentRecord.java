@@ -1,139 +1,163 @@
 package com.yg.omp.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-/** 
- * @author 
+/**
+ * @author
  */
+@Entity(name = "tb_prepayment_record")
 public class PrepaymentRecord implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 3082228696548872201L;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Integer id;
 
+    @Column(name = "serialport_id")
     private Integer serialportId;
 
+    @Column(name = "meter_no")
     private Integer meterNo;
 
+    @Column(name = "prepayment_value")
     private Float prepaymentValue;
 
     /**
      * 充值结果-1充值成功，2充值失败
      * prepayment_result
      */
+    @Column(name = "prepayment_result")
     private Integer prepaymentResult;
 
+    @Column(name = "create_time")
     private Date createTime;
 
+    @Column(name = "update_time")
     private Date updateTime;
 
-    /** 
+    /**
      * 获取 tb_prepayment_record.id
+     *
      * @return tb_prepayment_record.id
      */
     public final Integer getId() {
         return id;
     }
 
-    /** 
+    /**
      * 设置 tb_prepayment_record.id
+     *
      * @param id tb_prepayment_record.id
      */
     public final void setId(Integer id) {
         this.id = id;
     }
 
-    /** 
+    /**
      * 获取 tb_prepayment_record.serialport_id
+     *
      * @return tb_prepayment_record.serialport_id
      */
     public final Integer getSerialportId() {
         return serialportId;
     }
 
-    /** 
+    /**
      * 设置 tb_prepayment_record.serialport_id
+     *
      * @param serialportId tb_prepayment_record.serialport_id
      */
     public final void setSerialportId(Integer serialportId) {
         this.serialportId = serialportId;
     }
 
-    /** 
+    /**
      * 获取 tb_prepayment_record.meter_no
+     *
      * @return tb_prepayment_record.meter_no
      */
     public final Integer getMeterNo() {
         return meterNo;
     }
 
-    /** 
+    /**
      * 设置 tb_prepayment_record.meter_no
+     *
      * @param meterNo tb_prepayment_record.meter_no
      */
     public final void setMeterNo(Integer meterNo) {
         this.meterNo = meterNo;
     }
 
-    /** 
+    /**
      * 获取 tb_prepayment_record.prepayment_value
+     *
      * @return tb_prepayment_record.prepayment_value
      */
     public final Float getPrepaymentValue() {
         return prepaymentValue;
     }
 
-    /** 
+    /**
      * 设置 tb_prepayment_record.prepayment_value
+     *
      * @param prepaymentValue tb_prepayment_record.prepayment_value
      */
     public final void setPrepaymentValue(Float prepaymentValue) {
         this.prepaymentValue = prepaymentValue;
     }
 
-    /** 
+    /**
      * 获取 充值结果-1充值成功，2充值失败 tb_prepayment_record.prepayment_result
+     *
      * @return 充值结果-1充值成功，2充值失败
      */
     public final Integer getPrepaymentResult() {
         return prepaymentResult;
     }
 
-    /** 
+    /**
      * 设置 充值结果-1充值成功，2充值失败 tb_prepayment_record.prepayment_result
+     *
      * @param prepaymentResult 充值结果-1充值成功，2充值失败
      */
     public final void setPrepaymentResult(Integer prepaymentResult) {
         this.prepaymentResult = prepaymentResult;
     }
 
-    /** 
+    /**
      * 获取 tb_prepayment_record.create_time
+     *
      * @return tb_prepayment_record.create_time
      */
     public final Date getCreateTime() {
         return createTime;
     }
 
-    /** 
+    /**
      * 设置 tb_prepayment_record.create_time
+     *
      * @param createTime tb_prepayment_record.create_time
      */
     public final void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    /** 
+    /**
      * 获取 tb_prepayment_record.update_time
+     *
      * @return tb_prepayment_record.update_time
      */
     public final Date getUpdateTime() {
         return updateTime;
     }
 
-    /** 
+    /**
      * 设置 tb_prepayment_record.update_time
+     *
      * @param updateTime tb_prepayment_record.update_time
      */
     public final void setUpdateTime(Date updateTime) {
