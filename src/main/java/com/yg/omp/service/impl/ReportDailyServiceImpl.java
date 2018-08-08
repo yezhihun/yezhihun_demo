@@ -8,6 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
 @Service
 public class ReportDailyServiceImpl extends AbstractBaseServiceImpl<ReportDaily> implements ReportDailyService {
     @Autowired
@@ -18,5 +22,10 @@ public class ReportDailyServiceImpl extends AbstractBaseServiceImpl<ReportDaily>
     @Override
     public void init() {
         this.baseDao = reportDailyDAO;
+    }
+
+    @Override
+    public List<Map<String, Object>> selectDailyReport(Integer buildingId, String time) {
+        return reportDailyDAO.selectDailyReport(buildingId, time);
     }
 }

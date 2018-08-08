@@ -8,6 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 @Service
 public class BakMeterDataHourServiceImpl extends AbstractBaseServiceImpl<BakMeterDataHour> implements BakMeterDataHourService {
     @Autowired
@@ -18,5 +21,25 @@ public class BakMeterDataHourServiceImpl extends AbstractBaseServiceImpl<BakMete
     @Override
     public void init() {
         this.baseDao = bakMeterDataHourDAO;
+    }
+
+    @Override
+    public List<Map<String, Object>> selectTimerMeter(Integer buildingId, String time) {
+        return bakMeterDataHourDAO.selectTimerMeter(buildingId, time);
+    }
+
+    @Override
+    public List<Map<String, Object>> selectLoopMeter(Integer meterNo, String startTime, String endTime) {
+        return bakMeterDataHourDAO.selectLoopMeter(meterNo, startTime, endTime);
+    }
+
+    @Override
+    public List<Map<String, Object>> selectElectricityMeter(Integer meterNo, String startTime, String endTime) {
+        return bakMeterDataHourDAO.selectElectricityMeter(meterNo, startTime, endTime);
+    }
+
+    @Override
+    public List<BakMeterDataHour> selectTrendAnalysis(Integer meterNo, String dateTime) {
+        return bakMeterDataHourDAO.selectTrendAnalysis(meterNo, dateTime);
     }
 }

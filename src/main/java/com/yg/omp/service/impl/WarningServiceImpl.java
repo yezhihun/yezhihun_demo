@@ -1,5 +1,6 @@
 package com.yg.omp.service.impl;
 
+import com.yg.omp.base.PageModel;
 import com.yg.omp.dao.WarningDAO;
 import com.yg.omp.model.Warning;
 import com.yg.omp.service.WarningService;
@@ -7,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class WarningServiceImpl extends AbstractBaseServiceImpl<Warning> implements WarningService {
@@ -18,5 +22,21 @@ public class WarningServiceImpl extends AbstractBaseServiceImpl<Warning> impleme
     @Override
     public void init() {
         this.baseDao = warningDAO;
+    }
+
+    @Override
+    public PageModel selectWarningForParam(String buildingName, String startTime, String endTime, String warningType, PageModel page) {
+        if (buildingName != null && buildingName.endsWith(",")){
+            buildingName = buildingName.substring(0, buildingName.length()-1);
+        }
+        if (warningType != null && warningType.endsWith(",")){
+            warningType = warningType.substring(0, warningType.length()-1);
+        }
+        List<Warning> list = warningDAO.findByParamPage(buildingName, warningType, startTime, endTime, page);
+        Long count = warningDAO.countByBuildingNameAndWarningTypeAndCreateTimeBetweenOrderByCreateTime(buildingName, warningType, startTime, endTime);
+
+        page.setRows(list);
+        page.setTotal(count);
+        return page;
     }
 }
