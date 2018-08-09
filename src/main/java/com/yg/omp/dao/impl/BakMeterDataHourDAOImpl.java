@@ -10,7 +10,6 @@ import java.util.Map;
 /**
  * @author 
  */
-@SuppressWarnings("ALL")
 public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
 
     List<Map<String, Object>> selectTimerMeter(Integer buildingId, String time){

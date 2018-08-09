@@ -101,12 +101,17 @@
 		},function (data) {
 			console.log(data);
 		});
+
+		$("#testBtn").bind("click", function(){
+		   alert(1);
+		});
 	});
 
 </script>
 </head>
 
 <body>
+	<button id="testBtn">test</button>
 	<div id="wrapper" class="yy_home">
 
 		<!-- Navigation -->

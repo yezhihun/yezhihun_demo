@@ -10,11 +10,10 @@ import java.util.Map;
 /**
  * @author
  */
-@SuppressWarnings("ALL")
-public class CurDataDAOImpl extends BaseDaoImpl<CurData> {
+public class CurDataDaoImpl extends BaseDaoImpl<CurData> {
 
-    public List<Map<String, Object>> selectChartMonitorForHigh(Integer buildingId) {
-        String sql = "SELECT\n" +
+    public List<Map<String, Object>> findChartMonitorForHigh(Integer buildingId) {
+        String sql = "find\n" +
                 "\ttc.cabinet_no cabinetNo,\n" +
                 "\ttl.loop_name loopName,\n" +
                 "\ttcd.curdata_uab curdataUab,\n" +
@@ -46,8 +45,8 @@ public class CurDataDAOImpl extends BaseDaoImpl<CurData> {
         return list;
     }
 
-    public List<Map<String, Object>> selectChartMonitorForLow(Integer buildingId, Integer transformerId) {
-        String sql = "SELECT\n" +
+    public List<Map<String, Object>> findChartMonitorForLow(Integer buildingId, Integer transformerId) {
+        String sql = "find\n" +
                 "\ttc.cabinet_no cabinetNo,\n" +
                 "\ttl.loop_name loopName,\n" +
                 "\ttcd.curdata_ua curdataUa,\n" +
@@ -89,8 +88,8 @@ public class CurDataDAOImpl extends BaseDaoImpl<CurData> {
         return list;
     }
 
-    List<Map<String, Object>> selectDataMonitorRealTime(Integer buildingId, Integer transformerId){
-        String sql = "SELECT\n" +
+    List<Map<String, Object>> findDataMonitorRealTime(Integer buildingId, Integer transformerId){
+        String sql = "find\n" +
                 "\ttm.building_id buildingId,\n" +
                 "\ttm.meter_addr meterAddr,\n" +
                 "\ttm.meter_no MeterNo,\n" +

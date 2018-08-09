@@ -4,7 +4,6 @@ import com.yg.omp.base.BaseDao;
 import com.yg.omp.service.BaseService;
 import org.apache.log4j.Logger;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
@@ -26,9 +25,6 @@ public abstract class AbstractBaseServiceImpl<T> implements BaseService<T>{
 
 	protected BaseDao<T> baseDao;
 
-	@PostConstruct
-	public abstract void init();
-	
 	protected Logger log = Logger.getLogger(this.getClass());
 	
 	public void deleteByPrimaryKey(Integer id){
