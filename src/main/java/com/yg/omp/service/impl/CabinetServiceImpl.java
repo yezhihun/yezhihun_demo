@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CabinetServiceImpl extends AbstractBaseServiceImpl<Cabinet> implements CabinetService {
     @Autowired
@@ -18,5 +20,10 @@ public class CabinetServiceImpl extends AbstractBaseServiceImpl<Cabinet> impleme
     @Override
     public void init() {
         this.baseDao = cabinetDAO;
+    }
+
+    @Override
+    public List<Cabinet> findByBuildingId(Integer buildingId) {
+        return cabinetDAO.findByBuildingId(buildingId);
     }
 }

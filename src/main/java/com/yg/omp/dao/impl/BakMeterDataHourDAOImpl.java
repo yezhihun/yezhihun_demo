@@ -15,27 +15,27 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
 
     List<Map<String, Object>> selectTimerMeter(Integer buildingId, String time){
         String sql = "SELECT\n" +
-                "\ttbme.meter_no,\n" +
-                "\ttbb.building_name,\n" +
-                "\ttbme.transformer_name,\n" +
-                "\ttbc.cabinet_name,\n" +
-                "\ttbl.loop_no,\n" +
-                "\ttbl.loop_name,\n" +
-                "\ttbbmdh.curdata_ua,\n" +
-                "\ttbbmdh.curdata_ub,\n" +
-                "\ttbbmdh.curdata_uc,\n" +
-                "\ttbbmdh.curdata_uab,\n" +
-                "\ttbbmdh.curdata_ubc,\n" +
-                "\ttbbmdh.curdata_uac,\n" +
-                "\ttbbmdh.curdata_ia,\n" +
-                "\ttbbmdh.curdata_ib,\n" +
-                "\ttbbmdh.curdata_ic,\n" +
-                "\ttbbmdh.curdata_sparefloat01,\n" +
-                "\ttbbmdh.curdata_pz,\n" +
-                "\ttbbmdh.curdata_qz,\n" +
-                "\ttbbmdh.curdata_pf,\n" +
-                "\ttbbmdh.curdata_f,\n" +
-                "\ttbbmdh.curdata_epi\n" +
+                "\ttbme.meter_no meterNo,\n" +
+                "\ttbb.building_name buildingName,\n" +
+                "\ttbme.transformer_name transformerName,\n" +
+                "\ttbc.cabinet_name cabinetName,\n" +
+                "\ttbl.loop_no loopNo,\n" +
+                "\ttbl.loop_name loopName,\n" +
+                "\ttbbmdh.curdata_ua curdataUa,\n" +
+                "\ttbbmdh.curdata_ub curdataUb,\n" +
+                "\ttbbmdh.curdata_uc curdataUc,\n" +
+                "\ttbbmdh.curdata_uab curdataUab,\n" +
+                "\ttbbmdh.curdata_ubc curdataUbc,\n" +
+                "\ttbbmdh.curdata_uac curdataUac,\n" +
+                "\ttbbmdh.curdata_ia curdataIa,\n" +
+                "\ttbbmdh.curdata_ib curdataIb,\n" +
+                "\ttbbmdh.curdata_ic curdataIc,\n" +
+                "\ttbbmdh.curdata_sparefloat01  curdataSparefloat01,\n" +
+                "\ttbbmdh.curdata_pz curdataPz,\n" +
+                "\ttbbmdh.curdata_qz curdataQz,\n" +
+                "\ttbbmdh.curdata_pf curdataPf,\n" +
+                "\ttbbmdh.curdata_f curdataF,\n" +
+                "\ttbbmdh.curdata_epi curdataEpi\n" +
                 "FROM\n" +
                 "\tth_bakmeterdata_hour AS tbbmdh\n" +
                 "INNER JOIN tb_meter AS tbme ON tbme.meter_no = tbbmdh.meter_no\n" +
@@ -60,22 +60,22 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
 
     List<Map<String, Object>> selectLoopMeter(Integer meterNo, String startTime, String endTime){
         String sql = "SELECT\n" +
-                "\ttb.building_name,\n" +
-                "\ttme.loop_no,\n" +
-                "\ttme.loop_name,\n" +
-                "\ttbbmdh.bakmeterdata_format_time,\n" +
-                "\ttbbmdh.curdata_ua,\n" +
-                "\ttbbmdh.curdata_ub,\n" +
-                "\ttbbmdh.curdata_uc,\n" +
-                "\ttbbmdh.curdata_ia,\n" +
-                "\ttbbmdh.curdata_ib,\n" +
-                "\ttbbmdh.curdata_ic,\n" +
-                "\ttbbmdh.curdata_sparefloat01,\n" +
-                "\ttbbmdh.curdata_pz,\n" +
-                "\ttbbmdh.curdata_qz,\n" +
-                "\ttbbmdh.curdata_pf,\n" +
-                "\ttbbmdh.curdata_f,\n" +
-                "\ttbbmdh.curdata_epi\n" +
+                "\ttb.building_name buildingName,\n" +
+                "\ttme.loop_no loopNo,\n" +
+                "\ttme.loop_name loopName,\n" +
+                "\ttbbmdh.bakmeterdata_format_time bakmeterdataFormatTime,\n" +
+                "\ttbbmdh.curdata_ua curdataUa,\n" +
+                "\ttbbmdh.curdata_ub curdataUb,\n" +
+                "\ttbbmdh.curdata_uc curdataUc,\n" +
+                "\ttbbmdh.curdata_ia curdataIa,\n" +
+                "\ttbbmdh.curdata_ib curdataIb,\n" +
+                "\ttbbmdh.curdata_ic curdataIc,\n" +
+                "\ttbbmdh.curdata_sparefloat01 curdataSparefloat01,\n" +
+                "\ttbbmdh.curdata_pz curdataPz,\n" +
+                "\ttbbmdh.curdata_qz curdataQz,\n" +
+                "\ttbbmdh.curdata_pf curdataPf,\n" +
+                "\ttbbmdh.curdata_f curdataF,\n" +
+                "\ttbbmdh.curdata_epi curdataEpi\n" +
                 "FROM\n" +
                 "\ttz_bakmeterdata_" + meterNo + " AS tbbmdh\n" +
                 "INNER JOIN tb_meter AS tme ON tme.meter_no = tbbmdh.meter_no\n" +
@@ -102,27 +102,27 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
 
     List<Map<String, Object>> selectElectricityMeter(Integer buildingId, String startTime, String endTime){
         String sql = "SELECT\n" +
-                "\t\tt1.meter_no,\n" +
-                "\t\tt1.building_name,\n" +
-                "\t\tt1.transformer_name,\n" +
-                "\t\tt1.cabinet_name,\n" +
-                "\t\tt1.loop_no,\n" +
-                "\t\tt1.loop_name,\n" +
-                "\t\tt2.curdata_ua - t1.curdata_ua,\n" +
-                "\t\tt2.curdata_ub - t1.curdata_ub,\n" +
-                "\t\tt2.curdata_uc - t1.curdata_uc,\n" +
-                "\t\tt2.curdata_uab - t1.curdata_uab,\n" +
-                "\t\tt2.curdata_ubc - t1.curdata_ubc,\n" +
-                "\t\tt2.curdata_uac - t1.curdata_uac,\n" +
-                "\t\tt2.curdata_ia - t1.curdata_ia,\n" +
-                "\t\tt2.curdata_ib - t1.curdata_ib,\n" +
-                "\t\tt2.curdata_ic - t1.curdata_ic,\n" +
-                "\t\tt2.curdata_sparefloat01 - t1.curdata_sparefloat01,\n" +
-                "\t\tt2.curdata_pz - t1.curdata_pz,\n" +
-                "\t\tt2.curdata_qz - t1.curdata_qz,\n" +
-                "\t\tt2.curdata_pf - t1.curdata_pf,\n" +
-                "\t\tt2.curdata_f - t1.curdata_f,\n" +
-                "\t\tt2.curdata_epi - t1.curdata_epi\t\n" +
+                "\t\tt1.meter_no meterNo,\n" +
+                "\t\tt1.building_name buildingName,\n" +
+                "\t\tt1.transformer_name transformerName,\n" +
+                "\t\tt1.cabinet_name cabinetBame,\n" +
+                "\t\tt1.loop_no loopNo,\n" +
+                "\t\tt1.loop_name loopName,\n" +
+                "\t\tt2.curdata_ua curdataUa,\n" +
+                "\t\tt2.curdata_ub curdataUb,\n" +
+                "\t\tt2.curdata_uc curdataUc,\n" +
+                "\t\tt2.curdata_uab curdataUab,\n" +
+                "\t\tt2.curdata_ubc curdataUbc,\n" +
+                "\t\tt2.curdata_uac curdataUac,\n" +
+                "\t\tt2.curdata_ia curdataIa\n" +
+                "\t\tt2.curdata_ib curdataIb,\n" +
+                "\t\tt2.curdata_ic curdataIc,\n" +
+                "\t\tt2.curdata_sparefloat01 curdataSparefloat01,\n" +
+                "\t\tt2.curdata_pz curdataPz,\n" +
+                "\t\tt2.curdata_qz curdataQz,\n" +
+                "\t\tt2.curdata_pf curdataPf,\n" +
+                "\t\tt2.curdata_f curdataF,\n" +
+                "\t\tt2.curdata_epi - t1.curdata_epi  curdataEpi\t\n" +
                 "FROM\n" +
                 "\t(\n" +
                 "\t\tSELECT\n" +
@@ -208,17 +208,17 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
 
     List<BakMeterDataHour> selectTrendAnalysis(Integer meterNo, String dateTime){
         String sql = "SELECT\n" +
-                "\tcurdata_ia,\n" +
-                "\tcurdata_ib,\n" +
-                "\tcurdata_ic,\n" +
-                "\tcurdata_pz,\n" +
-                "\tcurdata_sparefloat01,\n" +
-                "\tcurdata_sparefloat02,\n" +
-                "\tcurdata_sparefloat03,\n" +
-                "\tcurdata_sparefloat04,\n" +
-                "\tcurdata_sparefloat05,\n" +
-                "\tbakmeterdata_format_time,\n" +
-                "\tbakmeterdata_format_index\n" +
+                "\tcurdata_ia curdataIa,\n" +
+                "\tcurdata_ib curdataIb,\n" +
+                "\tcurdata_ic curdataIc,\n" +
+                "\tcurdata_pz curdataPz,\n" +
+                "\tcurdata_sparefloat01 curdataSparefloat01,\n" +
+                "\tcurdata_sparefloat02 curdataSparefloat02,\n" +
+                "\tcurdata_sparefloat03 curdataSparefloat03,\n" +
+                "\tcurdata_sparefloat04 curdataSparefloat04,\n" +
+                "\tcurdata_sparefloat05 curdataSparefloat05,\n" +
+                "\tbakmeterdata_format_time bakmeterdataFormatTime,\n" +
+                "\tbakmeterdata_format_index bakmeterdataFormatIndex\n" +
                 "FROM\n" +
                 "\ttz_bakmeterdata_" + meterNo + "\n" +
                 "\tWHERE\n" +

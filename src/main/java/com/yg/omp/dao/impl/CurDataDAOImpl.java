@@ -15,19 +15,19 @@ public class CurDataDAOImpl extends BaseDaoImpl<CurData> {
 
     public List<Map<String, Object>> selectChartMonitorForHigh(Integer buildingId) {
         String sql = "SELECT\n" +
-                "\ttc.cabinet_no,\n" +
-                "\ttl.loop_name,\n" +
-                "\ttcd.curdata_uab,\n" +
-                "\ttcd.curdata_ubc,\n" +
-                "\ttcd.curdata_uac,\n" +
-                "\ttcd.curdata_ia,\n" +
-                "\ttcd.curdata_ib,\n" +
-                "\ttcd.curdata_ic,\n" +
-                "\ttcd.curdata_pz,\n" +
-                "\ttcd.curdata_qz,\n" +
-                "\ttmc.meter_net_status,\n" +
-                "\ttsc.serialport_connstatus,\n" +
-                "\ttmc.meter_connstatus\n" +
+                "\ttc.cabinet_no cabinetNo,\n" +
+                "\ttl.loop_name loopName,\n" +
+                "\ttcd.curdata_uab curdataUab,\n" +
+                "\ttcd.curdata_ubc curdataUbc,\n" +
+                "\ttcd.curdata_uac curdataUac,\n" +
+                "\ttcd.curdata_ia curdataIa,\n" +
+                "\ttcd.curdata_ib curdataIb,\n" +
+                "\ttcd.curdata_ic curdataIc,\n" +
+                "\ttcd.curdata_pz curdataPz,\n" +
+                "\ttcd.curdata_qz curdataQz,\n" +
+                "\ttmc.meter_net_status meterNetStatus,\n" +
+                "\ttsc.serialport_connstatus serialportConnstatus,\n" +
+                "\ttmc.meter_connstatus meterConnstatus\n" +
                 "FROM\n" +
                 "\ttb_curdata AS tcd\n" +
                 "INNER JOIN tb_meter AS tm ON tcd.meter_id = tm.id\n" +
@@ -48,29 +48,29 @@ public class CurDataDAOImpl extends BaseDaoImpl<CurData> {
 
     public List<Map<String, Object>> selectChartMonitorForLow(Integer buildingId, Integer transformerId) {
         String sql = "SELECT\n" +
-                "\ttc.cabinet_no,\n" +
-                "\ttl.loop_name,\n" +
-                "\ttcd.curdata_ua,\n" +
-                "\ttcd.curdata_ub,\n" +
-                "\ttcd.curdata_uc,\n" +
-                "\ttcd.curdata_uab,\n" +
-                "\ttcd.curdata_ubc,\n" +
-                "\ttcd.curdata_uac,\n" +
-                "\ttcd.curdata_ia,\n" +
-                "\ttcd.curdata_ib,\n" +
-                "\ttcd.curdata_ic,\n" +
-                "\ttcd.curdata_pz,\n" +
-                "\ttcd.curdata_qz,\n" +
-                "\ttcd.curdata_sparefloat01,\n" +
-                "\ttcd.curdata_sparefloat02,\n" +
-                "\ttcd.curdata_sparefloat03,\n" +
-                "\ttcd.curdata_sparefloat04,\n" +
-                "\ttcd.curdata_sparefloat05,\n" +
-                "\ttcd.curdata_spareint01,\n" +
-                "\ttcd.curdata_spareint02,\n" +
-                "\ttmc.meter_net_status,\n" +
-                "\ttsc.serialport_connstatus,\n" +
-                "\ttmc.meter_connstatus\n" +
+                "\ttc.cabinet_no cabinetNo,\n" +
+                "\ttl.loop_name loopName,\n" +
+                "\ttcd.curdata_ua curdataUa,\n" +
+                "\ttcd.curdata_ub curdataUb,\n" +
+                "\ttcd.curdata_uc curdataUc,\n" +
+                "\ttcd.curdata_uab curdataUab,\n" +
+                "\ttcd.curdata_ubc curdataUbc,\n" +
+                "\ttcd.curdata_uac curdataUac,\n" +
+                "\ttcd.curdata_ia curdataIa,\n" +
+                "\ttcd.curdata_ib curdataIb,\n" +
+                "\ttcd.curdata_ic curdataIc,\n" +
+                "\ttcd.curdata_pz curdataPz,\n" +
+                "\ttcd.curdata_qz curdataQz,\n" +
+                "\ttcd.curdata_sparefloat01 curdataSparefloat01,\n" +
+                "\ttcd.curdata_sparefloat02 curdataSparefloat02,\n" +
+                "\ttcd.curdata_sparefloat03 curdataSparefloat03,\n" +
+                "\ttcd.curdata_sparefloat04 curdataSparefloat04,\n" +
+                "\ttcd.curdata_sparefloat05 curdataSparefloat05,\n" +
+                "\ttcd.curdata_spareint01 curdataSpareint01,\n" +
+                "\ttcd.curdata_spareint02 curdataSpareint02,\n" +
+                "\ttmc.meter_net_status meterNetStatus,\n" +
+                "\ttsc.serialport_connstatus serialportConnstatus,\n" +
+                "\ttmc.meter_connstatus meterConnstatus\n" +
                 "FROM\n" +
                 "\ttb_curdata AS tcd\n" +
                 "INNER JOIN tb_meter AS tm ON tcd.meter_id = tm.id\n" +
@@ -91,37 +91,37 @@ public class CurDataDAOImpl extends BaseDaoImpl<CurData> {
 
     List<Map<String, Object>> selectDataMonitorRealTime(Integer buildingId, Integer transformerId){
         String sql = "SELECT\n" +
-                "\ttm.building_id,\n" +
-                "\ttm.meter_addr,\n" +
-                "\ttm.meter_no,\n" +
-                "\ttbb.building_name,\n" +
-                "\ttt.transformer_name,\n" +
-                "\ttc.cabinet_name,\n" +
-                "\tts.serialport_no,\n" +
-                "\ttl.loop_no,\n" +
-                "\ttl.loop_name,\n" +
-                "\ttsc.serialport_connstatus,\n" +
-                "\ttmc.meter_connstatus,\n" +
-                "\ttmc.meter_net_status,\n" +
-                "\ttcd.curdata_ua,\n" +
-                "\ttcd.curdata_ub,\n" +
-                "\ttcd.curdata_uc,\n" +
-                "\ttcd.curdata_uab,\n" +
-                "\ttcd.curdata_ubc,\n" +
-                "\ttcd.curdata_uac,\n" +
-                "\ttcd.curdata_ia,\n" +
-                "\ttcd.curdata_ib,\n" +
-                "\ttcd.curdata_ic,\n" +
-                "\ttcd.curdata_sparefloat01,\n" +
-                "\ttcd.curdata_spareint01,\n" +
-                "\ttcd.curdata_spareint02,\n" +
-                "\ttcd.curdata_pz,\n" +
-                "\ttcd.curdata_qz,\n" +
-                "\ttcd.curdata_pf,\n" +
-                "\ttcd.curdata_f,\n" +
-                "\ttcd.curdata_epi,\n" +
-                "\ttcd.curdata_threshold_i,\n" +
-                "\ttcd.curdata_threshold_p\n" +
+                "\ttm.building_id buildingId,\n" +
+                "\ttm.meter_addr meterAddr,\n" +
+                "\ttm.meter_no MeterNo,\n" +
+                "\ttbb.building_name buildingName,\n" +
+                "\ttt.transformer_name transformerName,\n" +
+                "\ttc.cabinet_name cabinetName,\n" +
+                "\tts.serialport_no serialportNo,\n" +
+                "\ttl.loop_no loopNo,\n" +
+                "\ttl.loop_name loopName,\n" +
+                "\ttsc.serialport_connstatus serialportConnstatus,\n" +
+                "\ttmc.meter_connstatus meterConnstatus,\n" +
+                "\ttmc.meter_net_status meterNetStatus,\n" +
+                "\ttcd.curdata_ua curdataUa,\n" +
+                "\ttcd.curdata_ub curdataUb,\n" +
+                "\ttcd.curdata_uc curdataUc,\n" +
+                "\ttcd.curdata_uab curdataUab,\n" +
+                "\ttcd.curdata_ubc curdataUbc,\n" +
+                "\ttcd.curdata_uac curdataUac,\n" +
+                "\ttcd.curdata_ia curdataIa,\n" +
+                "\ttcd.curdata_ib curdataIb,\n" +
+                "\ttcd.curdata_ic curdataIc,\n" +
+                "\ttcd.curdata_sparefloat01 curdataSparefloat01,\n" +
+                "\ttcd.curdata_spareint01 curdataSpareint01,\n" +
+                "\ttcd.curdata_spareint02 curdataSpareint02,\n" +
+                "\ttcd.curdata_pz curdataPz,\n" +
+                "\ttcd.curdata_qz curdataQz,\n" +
+                "\ttcd.curdata_pf curdataPf,\n" +
+                "\ttcd.curdata_f curdataF,\n" +
+                "\ttcd.curdata_epi curdataEpi,\n" +
+                "\ttcd.curdata_threshold_i curdataThresholdI,\n" +
+                "\ttcd.curdata_threshold_p curdataThresholdP\n" +
                 "FROM\n" +
                 "\ttb_curdata AS tcd\n" +
                 "INNER JOIN tb_meter AS tm ON tcd.meter_no = tm.meter_no\n" +
