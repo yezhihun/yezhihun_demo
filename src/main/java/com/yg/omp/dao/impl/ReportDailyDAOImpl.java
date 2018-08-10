@@ -13,7 +13,7 @@ import java.util.Map;
 @SuppressWarnings("ALL")
 public class ReportDailyDAOImpl extends BaseDaoImpl<ReportDaily> {
 
-    List<Map<String, Object>> selectDailyReport(Integer buildingId, String time){
+    public List<Map<String, Object>> selectDailyReport(Integer buildingId, String time){
         String sql = "SELECT\n" +
                 "\ttb.building_name buildingName,\n" +
                 "\ttt.transformer_name transformerName,\n" +

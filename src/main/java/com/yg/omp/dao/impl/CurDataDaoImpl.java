@@ -88,7 +88,7 @@ public class CurDataDaoImpl extends BaseDaoImpl<CurData> {
         return list;
     }
 
-    List<Map<String, Object>> findDataMonitorRealTime(Integer buildingId, Integer transformerId){
+    public List<Map<String, Object>> findDataMonitorRealTime(Integer buildingId, Integer transformerId){
         String sql = "find\n" +
                 "\ttm.building_id buildingId,\n" +
                 "\ttm.meter_addr meterAddr,\n" +

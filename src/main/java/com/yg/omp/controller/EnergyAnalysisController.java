@@ -44,7 +44,7 @@ public class EnergyAnalysisController {
      * @param time
      * @return
      */
-    @RequestMapping("/trendAnalysis")
+    @RequestMapping("/tempAnalysis")
     @ResponseBody
     public JSONObject tempAnalysis(@RequestParam("buildingId") Integer buildingId, @RequestParam("time") String time){
         JSONObject jsonObject = new JSONObject();

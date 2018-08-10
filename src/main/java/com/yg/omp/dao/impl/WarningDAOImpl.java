@@ -13,7 +13,7 @@ import java.util.List;
 @SuppressWarnings("unused")
 public class WarningDAOImpl extends BaseDaoImpl<Warning> {
 
-    List<Warning> findByParamPage(String buildingName, String warningType, String createTimeStart, String createTimeEnd, PageModel page){
+    public List<Warning> findByParamPage(String buildingName, String warningType, String createTimeStart, String createTimeEnd, PageModel page){
         StringBuilder hql = new StringBuilder("SELECT w FROM Warning w WHERE 1=1 AND warning_status IN (0,1)");
         if (buildingName != null && !buildingName.equals("")){
             hql.append(" AND buildingName IN " + splitForIn(buildingName));

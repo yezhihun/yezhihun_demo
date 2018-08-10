@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
 
-    List<Map<String, Object>> selectTimerMeter(Integer buildingId, String time){
+    public List<Map<String, Object>> selectTimerMeter(Integer buildingId, String time){
         String sql = "SELECT\n" +
                 "\ttbme.meter_no meterNo,\n" +
                 "\ttbb.building_name buildingName,\n" +
@@ -57,7 +57,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
         return list;
     }
 
-    List<Map<String, Object>> selectLoopMeter(Integer meterNo, String startTime, String endTime){
+    public List<Map<String, Object>> selectLoopMeter(Integer meterNo, String startTime, String endTime){
         String sql = "SELECT\n" +
                 "\ttb.building_name buildingName,\n" +
                 "\ttme.loop_no loopNo,\n" +
@@ -99,7 +99,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
         return list;
     }
 
-    List<Map<String, Object>> selectElectricityMeter(Integer buildingId, String startTime, String endTime){
+    public List<Map<String, Object>> selectElectricityMeter(Integer buildingId, String startTime, String endTime){
         String sql = "SELECT\n" +
                 "\t\tt1.meter_no meterNo,\n" +
                 "\t\tt1.building_name buildingName,\n" +
@@ -205,7 +205,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
         return list;
     }
 
-    List<BakMeterDataHour> selectTrendAnalysis(Integer meterNo, String dateTime){
+    public List<BakMeterDataHour> selectTrendAnalysis(Integer meterNo, String dateTime){
         String sql = "SELECT\n" +
                 "\tcurdata_ia curdataIa,\n" +
                 "\tcurdata_ib curdataIb,\n" +

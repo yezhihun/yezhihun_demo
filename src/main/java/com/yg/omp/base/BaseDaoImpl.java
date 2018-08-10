@@ -1,25 +1,13 @@
 package com.yg.omp.base;
 
-import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Id;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
-import javax.persistence.Query;
-
+import com.yg.omp.utils.SqlUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import com.yg.omp.utils.SqlUtil;
+import javax.persistence.*;
+import java.lang.reflect.Field;
+import java.util.*;
+import java.util.Map.Entry;
 
 
 /**
@@ -46,7 +34,7 @@ public abstract class BaseDaoImpl<T> {
 	protected EntityManagerFactory emf;
 	
 	protected Logger log = Logger.getLogger(this.getClass());
-	
+
 	public void update(T t){
 		Query q = null;
 		try {
