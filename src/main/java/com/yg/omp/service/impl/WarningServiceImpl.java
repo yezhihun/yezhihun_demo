@@ -33,10 +33,10 @@ public class WarningServiceImpl extends AbstractBaseServiceImpl<Warning> impleme
             warningType = warningType.substring(0, warningType.length()-1);
         }
         List<Warning> list = warningDAO.findByParamPage(buildingName, warningType, startTime, endTime, page);
-        Long count = warningDAO.countByBuildingNameAndWarningTypeAndCreateTimeBetweenOrderByCreateTime(buildingName, warningType, startTime, endTime);
+//        Long count = warningDAO.countByBuildingNameAndWarningTypeAndCreateTimeBetweenOrderByCreateTime(buildingName, warningType, startTime, endTime);
 
         page.setRows(list);
-        page.setTotal(count);
+        page.setTotal(0L);
         return page;
     }
 }
