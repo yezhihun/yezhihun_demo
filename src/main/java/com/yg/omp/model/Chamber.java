@@ -7,7 +7,8 @@ import java.util.Date;
 /**
  * @author
  */
-@Entity(name = "tb_chamber")
+@Entity
+@Table(name = "tb_chamber")
 public class Chamber implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 3466668731385960665L;

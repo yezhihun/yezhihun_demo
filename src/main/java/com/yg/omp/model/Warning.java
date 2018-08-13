@@ -1,13 +1,16 @@
 package com.yg.omp.model;
 
+
 import javax.persistence.*;
+import javax.persistence.Entity;
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author
  */
-@Entity(name = "tb_warning")
+@Entity
+@Table(name = "tb_warning")
 public class Warning implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = -3171071576805981118L;
@@ -17,9 +20,11 @@ public class Warning implements Serializable {
     private Integer id;
 
     @Column(name = "create_time")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
 
     @Column(name = "update_time")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
 
     @Column(name = "building_name")

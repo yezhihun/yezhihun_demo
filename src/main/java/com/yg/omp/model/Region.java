@@ -6,7 +6,8 @@ import java.io.Serializable;
 /**
  * @author
  */
-@Entity(name = "tb_region")
+@Entity
+@Table(name = "tb_region")
 public class Region implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = -612474902882125605L;

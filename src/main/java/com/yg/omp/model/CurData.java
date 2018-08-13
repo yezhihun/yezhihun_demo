@@ -7,7 +7,8 @@ import java.util.Date;
 /**
  * @author
  */
-@Entity(name = "tb_cur_data")
+@Entity
+@Table(name = "tb_cur_data")
 public class CurData implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 8964312826288657493L;

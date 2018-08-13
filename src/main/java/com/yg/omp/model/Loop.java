@@ -7,7 +7,8 @@ import java.util.Date;
 /**
  * @author
  */
-@Entity(name = "tb_loop")
+@Entity
+@Table(name = "tb_loop")
 public class Loop implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = -7127647881866503968L;

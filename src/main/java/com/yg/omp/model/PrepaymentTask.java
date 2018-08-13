@@ -7,7 +7,8 @@ import java.util.Date;
 /**
  * @author
  */
-@Entity(name = "tb_prepayment_task")
+@Entity
+@Table(name = "tb_prepayment_task")
 public class PrepaymentTask implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 3384266925832085174L;

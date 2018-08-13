@@ -6,7 +6,8 @@ import java.io.Serializable;
 /**
  * @author
  */
-@Entity(name = "tb_prepayment_log")
+@Entity
+@Table(name = "tb_prepayment_log")
 public class PrepaymentLog implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 6171634794571917257L;

@@ -7,7 +7,8 @@ import java.util.Date;
 /**
  * @author
  */
-@Entity(name = "th_bakmeterdata_hour")
+@Entity
+@Table(name = "th_bakmeterdata_hour")
 public class BakMeterDataHour implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 677101427165839038L;

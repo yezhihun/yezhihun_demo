@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,11 +24,13 @@ public interface WarningDAO extends BaseDao<Warning> {
      * @param createTime
      * @return
      */
-    @Modifying
-    @Query("select t from Warning t")
-    long countById(Integer id);
-//    @Query(countQuery = "")
-//    long countByBuildingNameAndWarningTypeAndCreateTimeBetweenOrderByCreateTime(String buildingName, String warningType, String createTimeStart, String createTime);
+//    @Modifying
+    @Query(value = "select t from Warning t", nativeQuery = false)
+    List<Warning> selectABC();
+//    long countById(Integer id);
+    @Query(value = "SELECT count(w) from Warning w where w.buildingName=?1 and w.warningType=?2" +
+                        " and w.createTime >= ?3 and w.createTime <= ?4 order by w.createTime desc ")
+    long countByBuildingNameAndWarningTypeAndCreateTimeBetweenOrderByCreateTime(String buildingName, String warningType, Date createTimeStart, Date createTime);
 
 
     /**

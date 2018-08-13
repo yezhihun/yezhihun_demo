@@ -4,10 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.yg.omp.model.Building;
 import com.yg.omp.model.Cabinet;
 import com.yg.omp.model.Meter;
-import com.yg.omp.service.BuildingService;
-import com.yg.omp.service.CabinetService;
-import com.yg.omp.service.CurDataService;
-import com.yg.omp.service.MeterService;
+import com.yg.omp.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,7 +36,6 @@ public class DataMonitorController {
     public JSONObject selectAllBuilding(){
         JSONObject json = new JSONObject();
         List<Building> list = buildingService.findAll();
-
         json.put("data", list);
         return json;
     }

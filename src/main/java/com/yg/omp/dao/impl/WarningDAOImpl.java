@@ -21,10 +21,10 @@ public class WarningDAOImpl extends BaseDaoImpl<Warning> {
         if (warningType != null && !warningType.equals("")){
             hql.append(" AND warningType = " + splitForIn(warningType));
         }
-        if (createTimeStart != null){
+        if (createTimeStart != null && !createTimeStart.equals("")){
             hql.append(" AND createTime >= " + createTimeStart);
         }
-        if (createTimeEnd != null){
+        if (createTimeEnd != null&& !createTimeEnd.equals("")){
             hql.append(" AND createTime <= " + createTimeEnd);
         }
         hql.append(" ORDER BY createTime desc, id DESC ");

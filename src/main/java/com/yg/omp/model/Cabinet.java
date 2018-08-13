@@ -7,7 +7,8 @@ import java.util.Date;
 /**
  * @author
  */
-@Entity(name = "tb_cabinet")
+@Entity
+@Table(name = "tb_cabinet")
 public class Cabinet implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 3943659757256966282L;

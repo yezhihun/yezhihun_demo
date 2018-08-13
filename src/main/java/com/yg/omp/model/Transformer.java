@@ -6,7 +6,8 @@ import java.io.Serializable;
 /**
  * @author
  */
-@Entity(name = "tb_transformer")
+@Entity
+@Table(name = "tb_transformer")
 public class Transformer implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = -2953431653603784372L;

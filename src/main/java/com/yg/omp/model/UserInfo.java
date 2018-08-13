@@ -6,7 +6,8 @@ import java.io.Serializable;
 /**
  * @author
  */
-@Entity(name = "tb_user_info")
+@Entity
+@Table(name = "tb_user_info")
 public class UserInfo implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 8969259516371093698L;

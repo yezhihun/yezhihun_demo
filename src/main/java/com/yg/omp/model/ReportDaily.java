@@ -7,7 +7,8 @@ import java.util.Date;
 /**
  * @author
  */
-@Entity(name = "tb_report_daily")
+@Entity
+@Table(name = "tb_report_daily")
 public class ReportDaily implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = -6433981512371782393L;

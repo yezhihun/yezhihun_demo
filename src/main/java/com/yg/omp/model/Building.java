@@ -6,7 +6,8 @@ import java.io.Serializable;
 /** 
  * @author 
  */
-@Entity(name="tb_building")
+@Entity
+@Table(name="tb_building")
 public class Building implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 9142804784808249795L;

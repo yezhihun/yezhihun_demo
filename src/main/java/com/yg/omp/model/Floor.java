@@ -7,7 +7,8 @@ import java.util.Date;
 /**
  * @author
  */
-@Entity(name = "tb_floor")
+@Entity
+@Table(name = "tb_floor")
 public class Floor implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = -3503347643331735462L;

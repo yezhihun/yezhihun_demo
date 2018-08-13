@@ -7,7 +7,8 @@ import java.util.Date;
 /**
  * @author
  */
-@Entity(name = "tb_meter")
+@Entity
+@Table(name = "tb_meter")
 public class Meter implements Serializable {
     //串行版本ID
     private static final long serialVersionUID = 1606082975783237767L;
