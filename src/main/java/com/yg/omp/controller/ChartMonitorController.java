@@ -1,6 +1,8 @@
 package com.yg.omp.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.wordnik.swagger.annotations.ApiOperation;
+import com.wordnik.swagger.annotations.ApiParam;
 import com.yg.omp.service.impl.CurDataServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,7 +33,8 @@ public class ChartMonitorController {
      */
     @RequestMapping("/low")
     @ResponseBody
-    public JSONObject chartMonitorForLow(@RequestParam("buildingId") Integer buildingId, @RequestParam("transformerId") Integer transformerId) {
+    @ApiOperation(value = "一次图检测-低压", notes = "描述")
+    public JSONObject chartMonitorForLow(@ApiParam(name = "buildingId", value = "建筑ID", required = true) @RequestParam(value = "buildingId") Integer buildingId,@ApiParam(name = "transformerId", value = "变压器ID", required = true) @RequestParam("transformerId") Integer transformerId) {
         JSONObject jsonObject = new JSONObject();
         List<Map<String, Object>> list = curDataService.selectChartMonitorForLow(buildingId, transformerId);
 
@@ -48,6 +51,7 @@ public class ChartMonitorController {
      */
     @RequestMapping("/high")
     @ResponseBody
+    @ApiOperation(value = "一次图检测-低压", notes = "描述")
     public JSONObject chartMonitorForHigh(@RequestParam("buildingId") Integer buildingId, @RequestParam("transformerId") Integer transformerId) {
         JSONObject jsonObject = new JSONObject();
         List<Map<String, Object>> list = curDataService.selectChartMonitorForHigh(buildingId);

@@ -15,7 +15,12 @@
 	</context:component-scan>
 	
 	<mvc:annotation-driven/>
-	
+
+	<!-- 接口自动化文档 -->
+	<bean class="com.yg.omp.utils.SwaggerConfig" />
+	<bean class="com.mangofactory.swagger.configuration.SpringSwaggerConfig" />
+
+
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
