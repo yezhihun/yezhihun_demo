@@ -13,7 +13,7 @@ import java.util.Map;
 public class CurDataDaoImpl extends BaseDaoImpl<CurData> {
 
     public List<Map<String, Object>> findChartMonitorForHigh(Integer buildingId) {
-        String sql = "find\n" +
+        String sql = "SELECT\n" +
                 "\ttc.cabinet_no cabinetNo,\n" +
                 "\ttl.loop_name loopName,\n" +
                 "\ttcd.curdata_uab curdataUab,\n" +
@@ -46,7 +46,7 @@ public class CurDataDaoImpl extends BaseDaoImpl<CurData> {
     }
 
     public List<Map<String, Object>> findChartMonitorForLow(Integer buildingId, Integer transformerId) {
-        String sql = "find\n" +
+        String sql = "SELECT\n" +
                 "\ttc.cabinet_no cabinetNo,\n" +
                 "\ttl.loop_name loopName,\n" +
                 "\ttcd.curdata_ua curdataUa,\n" +
@@ -89,7 +89,7 @@ public class CurDataDaoImpl extends BaseDaoImpl<CurData> {
     }
 
     public List<Map<String, Object>> findDataMonitorRealTime(Integer buildingId, Integer transformerId){
-        String sql = "find\n" +
+        String sql = "SELECT \n" +
                 "\ttm.building_id buildingId,\n" +
                 "\ttm.meter_addr meterAddr,\n" +
                 "\ttm.meter_no MeterNo,\n" +
