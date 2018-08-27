@@ -21,9 +21,9 @@ public class WarningController {
 
     @RequestMapping("/queryWarningLog")
     @ResponseBody
-    public PageModel queryWarningLog(@RequestParam("buildingName") String buildingName, @RequestParam("startTime") String startTime
-                                        , @RequestParam("endTime") String endTime, @RequestParam("warningType") String warningType
-                                        , @RequestParam("pageSize") Integer pageSize, @RequestParam("pageNo") Integer pageNo) {
+    public PageModel queryWarningLog(@RequestParam(value = "buildingName", required = false) String buildingName, @RequestParam(value = "startTime", required = false) String startTime
+                                        , @RequestParam(value = "endTime", required = false) String endTime, @RequestParam(value = "warningType", required = false) String warningType
+                                        , @RequestParam(value = "pageSize", required = false) Integer pageSize, @RequestParam(value = "pageNo", required = false) Integer pageNo) {
 //        Date startDate = null;
 //        Date endDate = null;
 //        if (startTime!=null){
@@ -31,8 +31,8 @@ public class WarningController {
 //            endDate = DateUtil.formatting(endTime, DateUtil.FORMATTING_DATETIME);
 //        }
         PageModel page = new PageModel();
-        page.setPageNo(pageNo);
-        page.setPageSize(pageSize);
+        page.setPageNo(pageNo == null ? 1 : pageNo);
+        page.setPageSize(pageSize == null ? 10 : pageSize);
 
         page = warningService.selectWarningForParam(buildingName, startTime, endTime, warningType, page);
 

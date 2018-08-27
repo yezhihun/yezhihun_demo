@@ -133,7 +133,7 @@ public class Meter implements Serializable {
     @Column(name = "meter_showstatus")
     private Integer meterShowstatus;
 
-    @Column(name = "meteris_collect")
+    @Column(name = "meter_is_collect")
     private Integer meterIsCollect;
 
     /**

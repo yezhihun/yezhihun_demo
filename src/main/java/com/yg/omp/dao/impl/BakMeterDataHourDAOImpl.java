@@ -113,7 +113,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "\t\tt2.curdata_uab curdataUab,\n" +
                 "\t\tt2.curdata_ubc curdataUbc,\n" +
                 "\t\tt2.curdata_uac curdataUac,\n" +
-                "\t\tt2.curdata_ia curdataIa\n" +
+                "\t\tt2.curdata_ia curdataIa,\n" +
                 "\t\tt2.curdata_ib curdataIb,\n" +
                 "\t\tt2.curdata_ic curdataIc,\n" +
                 "\t\tt2.curdata_sparefloat01 curdataSparefloat01,\n" +
@@ -154,7 +154,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "\t\tINNER JOIN tb_cabinet AS tbc ON tbme.cabinet_id = tbc.id\n" +
                 "WHERE\n" +
                 "\t\ttbme.meter_is_report = '1'\n" +
-                "\t\tAND tbbmdh.bakmeterdata_format_time = " + startTime + "\n" +
+                "\t\tAND tbbmdh.bakmeterdata_format_time = '" + startTime + "'\n" +
                 "\t\tAND tbme.building_id = " + buildingId + "\n" +
                 "GROUP BY\n" +
                 "\t\ttbbmdh.meter_id\n" +
@@ -190,13 +190,13 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "\t\tINNER JOIN tb_cabinet AS tbc ON tbme.cabinet_id = tbc.id\n" +
                 "WHERE\n" +
                 "\t\ttbme.meter_is_report = '1'\n" +
-                "\t\tAND tbbmdh.bakmeterdata_format_time = " + endTime + "\n" +
+                "\t\tAND tbbmdh.bakmeterdata_format_time = \'" + endTime + "\'\n" +
                 "\t\tAND tbme.building_id = " + buildingId + "\n" +
                 "GROUP BY\n" +
                 "\t\ttbbmdh.meter_id\n" +
                 "\t)t2 ON t1.meter_no = t2.meter_no\n" +
                 "ORDER BY\n" +
-                "\tmeter_no ASC;\n";
+                "\tmeterNo ASC;\n";
 
         Query q = entityManager.createNativeQuery(sql);
 

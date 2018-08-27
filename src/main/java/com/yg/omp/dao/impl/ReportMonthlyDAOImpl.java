@@ -27,7 +27,7 @@ public class ReportMonthlyDAOImpl extends BaseDaoImpl<ReportMonthly> {
                 "INNER JOIN tb_cabinet AS tc ON tm.cabinet_id = tc.id\n" +
                 "WHERE\n" +
                 "\ttm.meter_is_report = " + buildingId + "\n" +
-                "AND monthly.report_String = " + dateTime + "\n" +
+                "AND monthly.report_date = " + dateTime + "\n" +
                 "AND tm.building_id = '1'\n" +
                 "ORDER BY\n" +
                 "\ttm.building_name,\n" +
@@ -37,7 +37,7 @@ public class ReportMonthlyDAOImpl extends BaseDaoImpl<ReportMonthly> {
                 "\ttm.loop_no,\n" +
                 "\ttm.id;";
 
-        Query q = entityManager.createNamedQuery(sql);
+        Query q = entityManager.createNativeQuery(sql);
 
         List<Map<String, Object>> list = q.getResultList();
 

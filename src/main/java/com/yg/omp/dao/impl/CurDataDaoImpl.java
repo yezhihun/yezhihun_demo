@@ -35,7 +35,7 @@ public class CurDataDaoImpl extends BaseDaoImpl<CurData> {
                 "INNER JOIN tb_meter_connstatus AS tmc ON tm.id = tmc.meter_id\n" +
                 "INNER JOIN tb_serialport_connstatus AS tsc ON tm.serialport_id = tsc.serialport_id\n" +
                 "WHERE\n" +
-                "\ttm.building_id = " + buildingId +
+                "\ttm.building_id = " + buildingId + "\n" +
                 "AND tm.transformer_id IS NULL";
 
         Query q = entityManager.createNativeQuery(sql);
@@ -78,7 +78,7 @@ public class CurDataDaoImpl extends BaseDaoImpl<CurData> {
                 "INNER JOIN tb_meter_connstatus AS tmc ON tm.id = tmc.meter_id\n" +
                 "INNER JOIN tb_serialport_connstatus AS tsc ON tm.serialport_id = tsc.serialport_id\n" +
                 "WHERE\n" +
-                "\ttm.building_id = " + buildingId +
+                "\ttm.building_id = " + buildingId + "\n" +
                 "AND tm.transformer_id = " + transformerId;
 
         Query q = entityManager.createNativeQuery(sql);

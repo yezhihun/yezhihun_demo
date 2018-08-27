@@ -27,7 +27,7 @@ public class ReportDailyDAOImpl extends BaseDaoImpl<ReportDaily> {
                 "INNER JOIN tb_cabinet AS tc ON tm.cabinet_id = tc.id\n" +
                 "WHERE\n" +
                 "\ttm.meter_is_report = '1'\n" +
-                "AND daily.report_String = " + time + "\n" +
+                "AND daily.report_date = " + time + "\n" +
                 "AND tm.building_id = " + buildingId + "\n" +
                 "ORDER BY\n" +
                 "\ttm.building_name,\n" +
@@ -37,7 +37,7 @@ public class ReportDailyDAOImpl extends BaseDaoImpl<ReportDaily> {
                 "\ttm.loop_no,\n" +
                 "\ttm.id;";
 
-        Query q = entityManager.createNamedQuery(sql);
+        Query q = entityManager.createNativeQuery(sql);
 
         List<Map<String, Object>> list = q.getResultList();
 
