@@ -39,9 +39,11 @@
         const ui = SwaggerUIBundle({
             url: "http://localhost:8080/api-docs",
             dom_id: '#swagger-ui',
+            code :{
+                swagger: "2.0",
+                openapi: "3.0.0"
+            },
             deepLinking: true,
-            openapi: "3.0.0",
-            swagger: "2.0",
             presets: [
                 SwaggerUIBundle.presets.apis,
                 SwaggerUIStandalonePreset

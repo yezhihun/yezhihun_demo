@@ -3195,7 +3195,7 @@
                 return e
             }
         }
-git 
+
         var o = function () {
         };
         o.thatReturns = r, o.thatReturnsFalse = r(!1), o.thatReturnsTrue = r(!0), o.thatReturnsNull = r(null), o.thatReturnsThis = function () {
