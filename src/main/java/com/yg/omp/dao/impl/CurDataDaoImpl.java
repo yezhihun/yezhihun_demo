@@ -2,6 +2,8 @@ package com.yg.omp.dao.impl;
 
 import com.yg.omp.base.BaseDaoImpl;
 import com.yg.omp.model.CurData;
+import org.hibernate.SQLQuery;
+import org.hibernate.transform.Transformers;
 
 import javax.persistence.Query;
 import java.util.List;
@@ -39,6 +41,7 @@ public class CurDataDaoImpl extends BaseDaoImpl<CurData> {
                 "AND tm.transformer_id IS NULL";
 
         Query q = entityManager.createNativeQuery(sql);
+        q.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
 
         List<Map<String, Object>> list = q.getResultList();
 
@@ -82,6 +85,7 @@ public class CurDataDaoImpl extends BaseDaoImpl<CurData> {
                 "AND tm.transformer_id = " + transformerId;
 
         Query q = entityManager.createNativeQuery(sql);
+        q.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
 
         List<Map<String, Object>> list = q.getResultList();
 
@@ -136,6 +140,7 @@ public class CurDataDaoImpl extends BaseDaoImpl<CurData> {
                 "AND tm.meter_showstatus = '1'";
 
         Query q = entityManager.createNativeQuery(sql);
+        q.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
 
         List<Map<String, Object>> list = q.getResultList();
 

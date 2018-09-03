@@ -2,6 +2,8 @@ package com.yg.omp.dao.impl;
 
 import com.yg.omp.base.BaseDaoImpl;
 import com.yg.omp.model.BakMeterDataHour;
+import org.hibernate.SQLQuery;
+import org.hibernate.transform.Transformers;
 
 import javax.persistence.Query;
 import java.util.List;
@@ -51,6 +53,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "\ttbbmdh.meter_no ASC";
 
         Query q = entityManager.createNativeQuery(sql);
+        q.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
 
         List<Map<String, Object>> list = q.getResultList();
 
@@ -93,6 +96,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "\ttbbmdh.bakmeterdata_format_time";
 
         Query q = entityManager.createNativeQuery(sql);
+        q.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
 
         List<Map<String, Object>> list = q.getResultList();
 
@@ -199,6 +203,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "\tmeterNo ASC;\n";
 
         Query q = entityManager.createNativeQuery(sql);
+        q.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
 
         List<Map<String, Object>> list = q.getResultList();
 
