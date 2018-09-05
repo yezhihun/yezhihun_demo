@@ -45,7 +45,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "INNER JOIN tb_cabinet AS tbc ON tbme.cabinet_id = tbc.id\n" +
                 "WHERE\n" +
                 "\ttbme.meter_is_report = '1'\n" +
-                "AND tbbmdh.bakmeterdata_format_time = " + time + "\n" +
+                "AND tbbmdh.bakmeterdata_format_time = '" + time + "'\n" +
                 "AND tbme.building_id = " + buildingId + "\n" +
                 "GROUP BY\n" +
                 "\ttbbmdh.meter_id\n" +
@@ -84,8 +84,8 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "INNER JOIN tb_building AS tb ON tme.building_id = tb.id\n" +
                 "WHERE\n" +
                 "\ttbbmdh.meter_no = " + meterNo + "\n" +
-                "AND tbbmdh.bakmeterdata_format_time >= " + startTime + "\n" +
-                "AND tbbmdh.bakmeterdata_format_time <= " + endTime + "\n" +
+                "AND tbbmdh.bakmeterdata_format_time >= '" + startTime + "'\n" +
+                "AND tbbmdh.bakmeterdata_format_time <= '" + endTime + "'\n" +
                 "GROUP BY\n" +
                 "\tDate(\n" +
                 "\t\ttbbmdh.bakmeterdata_format_time\n" +
@@ -226,7 +226,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "FROM\n" +
                 "\ttz_bakmeterdata_" + meterNo + "\n" +
                 "\tWHERE\n" +
-                "\tAND Date(bakmeterdata_format_time) = " + dateTime;
+                "\tAND Date(bakmeterdata_format_time) = '" + dateTime +"'";
 
         Query q = entityManager.createNativeQuery(sql, BakMeterDataHour.class);
 
