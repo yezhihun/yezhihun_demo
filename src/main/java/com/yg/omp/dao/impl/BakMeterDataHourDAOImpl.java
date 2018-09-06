@@ -60,7 +60,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
         return list;
     }
 
-    public List<Map<String, Object>> selectLoopMeter(Integer meterNo, String startTime, String endTime){
+    public List<Map<String, Object>> selectLoopMeter(String meterNo, String startTime, String endTime){
         String sql = "SELECT\n" +
                 "\ttb.building_name buildingName,\n" +
                 "\ttme.loop_no loopNo,\n" +
@@ -210,7 +210,7 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
         return list;
     }
 
-    public List<BakMeterDataHour> selectTrendAnalysis(Integer meterNo, String dateTime){
+    public List<BakMeterDataHour> selectTrendAnalysis(String meterNo, String dateTime){
         String sql = "SELECT\n" +
                 "\tcurdata_ia curdataIa,\n" +
                 "\tcurdata_ib curdataIb,\n" +

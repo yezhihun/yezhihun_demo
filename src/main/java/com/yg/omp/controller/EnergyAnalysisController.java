@@ -30,7 +30,7 @@ public class EnergyAnalysisController {
      */
     @RequestMapping("/trendAnalysis")
     @ResponseBody
-    public JSONObject trendAnalysis(@RequestParam("meterNo") Integer meterNo, @RequestParam("time") String time){
+    public JSONObject trendAnalysis(@RequestParam("meterNo") String meterNo, @RequestParam("time") String time){
         JSONObject jsonObject = new JSONObject();
         List<BakMeterDataHour> list = bakMeterDataHourService.selectTrendAnalysis(meterNo, time);
 
