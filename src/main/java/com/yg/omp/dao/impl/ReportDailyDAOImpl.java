@@ -29,7 +29,7 @@ public class ReportDailyDAOImpl extends BaseDaoImpl<ReportDaily> {
                 "INNER JOIN tb_cabinet AS tc ON tm.cabinet_id = tc.id\n" +
                 "WHERE\n" +
                 "\ttm.meter_is_report = '1'\n" +
-                "AND daily.report_date = " + time + "\n" +
+                "AND daily.report_date = '" + time + "'\n" +
                 "AND tm.building_id = " + buildingId + "\n" +
                 "ORDER BY\n" +
                 "\ttm.building_name,\n" +
