@@ -113,7 +113,7 @@ public class Meter implements Serializable {
      * meter_addr
      */
     @Column(name = "meter_addr")
-    private Integer meterAddr;
+    private String meterAddr;
 
     /**
      * 仪表型号ID
@@ -563,7 +563,7 @@ public class Meter implements Serializable {
      *
      * @return 仪表Addr-仪表地址
      */
-    public final Integer getMeterAddr() {
+    public final String getMeterAddr() {
         return meterAddr;
     }
 
@@ -572,7 +572,7 @@ public class Meter implements Serializable {
      *
      * @param meterAddr 仪表Addr-仪表地址
      */
-    public final void setMeterAddr(Integer meterAddr) {
+    public final void setMeterAddr(String meterAddr) {
         this.meterAddr = meterAddr;
     }
 
