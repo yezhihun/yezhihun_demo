@@ -69,6 +69,9 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "\ttbbmdh.curdata_ua curdataUa,\n" +
                 "\ttbbmdh.curdata_ub curdataUb,\n" +
                 "\ttbbmdh.curdata_uc curdataUc,\n" +
+                "\ttbbmdh.curdata_uc curdataUab,\n" +
+                "\ttbbmdh.curdata_uc curdataUbc,\n" +
+                "\ttbbmdh.curdata_uc curdataUac,\n" +
                 "\ttbbmdh.curdata_ia curdataIa,\n" +
                 "\ttbbmdh.curdata_ib curdataIb,\n" +
                 "\ttbbmdh.curdata_ic curdataIc,\n" +
@@ -125,6 +128,8 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "\t\tt2.curdata_qz curdataQz,\n" +
                 "\t\tt2.curdata_pf curdataPf,\n" +
                 "\t\tt2.curdata_f curdataF,\n" +
+                "\t\tt2.curdata_epi endCurdataEpi\t\n" +
+                "\t\tt1.curdata_epi startCurdataEpi\t\n" +
                 "\t\tt2.curdata_epi - t1.curdata_epi  curdataEpi\t\n" +
                 "FROM\n" +
                 "\t(\n" +
