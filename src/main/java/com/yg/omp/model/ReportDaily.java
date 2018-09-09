@@ -20,7 +20,7 @@ public class ReportDaily implements Serializable {
     @Column(name = "meter_no")
     private String meterNo;
 
-    @Column(name = "reportdate")
+    @Column(name = "report_date")
     private String reportDate;
 
     @Column(name = "building_name")
