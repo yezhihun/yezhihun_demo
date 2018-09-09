@@ -9,9 +9,9 @@ public interface BakMeterDataHourService extends BaseService<BakMeterDataHour>{
 
     List<Map<String, Object>> selectTimerMeter(Integer buildingId, String time);
 
-    List<Map<String, Object>> selectLoopMeter(Integer meterNo, String startTime, String endTime);
+    List<Map<String, Object>> selectLoopMeter(String meterNo, String startTime, String endTime);
 
-    List<Map<String, Object>> selectElectricityMeter(Integer meterNo, String startTime, String endTime);
+    List<Map<String, Object>> selectElectricityMeter(Integer buildingId, String startTime, String endTime);
 
-    List<BakMeterDataHour> selectTrendAnalysis(Integer meterNo, String dateTime);
+    List<BakMeterDataHour> selectTrendAnalysis(String meterNo, String dateTime);
 }

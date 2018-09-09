@@ -59,7 +59,7 @@ public class ReportController {
      */
     @RequestMapping("/loopMeter")
     @ResponseBody
-    public JSONObject loopMeter(@RequestParam("meterNo") Integer meterNo, @RequestParam("startTime") String startTime, @RequestParam("endTime") String endTime){
+    public JSONObject loopMeter(@RequestParam("meterNo") String meterNo, @RequestParam("startTime") String startTime, @RequestParam("endTime") String endTime){
         JSONObject jsonObject = new JSONObject();
 //        Date startDate = null;
 //        Date endDate = null;
