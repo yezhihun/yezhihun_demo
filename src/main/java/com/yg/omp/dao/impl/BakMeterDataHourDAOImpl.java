@@ -128,8 +128,8 @@ public class BakMeterDataHourDAOImpl extends BaseDaoImpl<BakMeterDataHour> {
                 "\t\tt2.curdata_qz curdataQz,\n" +
                 "\t\tt2.curdata_pf curdataPf,\n" +
                 "\t\tt2.curdata_f curdataF,\n" +
-                "\t\tt2.curdata_epi endCurdataEpi\t\n" +
-                "\t\tt1.curdata_epi startCurdataEpi\t\n" +
+                "\t\tt2.curdata_epi endCurdataEpi,\t\n" +
+                "\t\tt1.curdata_epi startCurdataEpi,\t\n" +
                 "\t\tt2.curdata_epi - t1.curdata_epi  curdataEpi\t\n" +
                 "FROM\n" +
                 "\t(\n" +
